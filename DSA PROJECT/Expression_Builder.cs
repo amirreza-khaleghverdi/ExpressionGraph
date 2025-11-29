@@ -51,5 +51,36 @@ public static class Expression_Builder
     }
 
 
+    public static double evalute(string postfix)
+    {
+        Stack<double> stack = new Stack<double>();
+        foreach (char c in postfix)
+        {
+            if (char.IsDigit(c))
+            {
+                stack.Push(c - '0');
+            }
+            else if (c == '√')
+            {
+                double a = stack.Pop();
+                stack.Push(Math.Sqrt(a));
+            }
+            else
+            {
+                double b = stack.Pop();
+                double a = stack.Pop();
 
+                switch (c)
+                {
+                    case '+': stack.Push(a + b); break;
+                    case '-': stack.Push(a - b); break;
+                    case '*': stack.Push(a * b); break;
+                    case '/': stack.Push(a / b); break;
+                    case '^': stack.Push(Math.Pow(a, b)); break;
+                }
+            }
+        }
+        
+        return stack.Pop();
+    }
 }
