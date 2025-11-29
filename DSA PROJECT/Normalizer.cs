@@ -22,9 +22,9 @@ public class Normalizer
         return input;
     }
 
-    private static string RemoveSpaces(string s) => s.Replace(" ", "");
+    static string RemoveSpaces(string s) => s.Replace(" ", "");
 
-    private static void ValidateCharacters(string s)
+    static void ValidateCharacters(string s)
     {
         string valid = "0123456789+-*/()^√";
         foreach (char c in s)

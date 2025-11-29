@@ -1,28 +1,23 @@
-﻿
-namespace DSA_PROJECT;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
-        string normalstr = "";
         while (true)
         {
             try
             {
-                Console.Write("Enter input: ");
-                string input = Console.ReadLine();
-                normalstr = Normalizer.Normalizer.Normalize(input);
+                Console.Write("enter input: ");
+                string? input = Console.ReadLine();
+                string postfix = Expression_Builder.Expression_Builder.InToPost(input);
+                double result = Expression_Builder.Expression_Builder.evalute(postfix);
+                Console.WriteLine($"the final result is {result}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error ==> " + ex.Message);
                 Console.WriteLine("Please Try Again.\n");
-                // Thread.Sleep(1500);
-                // Console.Clear();
             }
         }
-        Console.WriteLine(normalstr);
     }
 }
 
