@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-public class Tokenize
+public class Tokenizer
 {
-    public List<string> Tokenize(string input)
+    public static List<string> Tokenize(string input)
     {
         List<string> tokens = new List<string>();
         int i = 0;

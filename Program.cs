@@ -9,12 +9,12 @@ class Program
         {
             Console.Write("Enter infix expression: ");
             string? infix = Console.ReadLine();
+            string Normalize = Preprocess.Normalize(infix);
+            List <string> tokenize = Tokenizer.Tokenize(Normalize);
 
 
-            List<string> tokens = Tokenize(infix);
 
-
-            expression_tree parser = new expression_tree(tokens);
+            expression_tree parser = new expression_tree(tokenize);
             node root = parser.ParseAddSub();
 
 
@@ -24,14 +24,6 @@ class Program
             Console.WriteLine($"\nResult = {result}");
         }
 
-    }
-
-    static List<string> Tokenize(string s)
-    {
-        return s.Replace("(", " ( ")
-                .Replace(")", " ) ")
-                .Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                .ToList();
     }
 }
 
