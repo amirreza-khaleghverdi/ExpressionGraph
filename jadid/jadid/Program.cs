@@ -1,14 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Text;
-using System.Net.NetworkInformation;
-using System.Xml.Schema;
-using System.Diagnostics;
-namespace DSPROJECT
+using System.Text.RegularExpressions;
+
+namespace ExpressionParser
 {
-    public static class Normalizer
+    public enum TokenType
+    {
+        Number,
+        Variable,
+        Plus,
+        Minus,
+        Multiply,
+        Divide,
+        Power,
+        Radical,
+        LParen,
+        RParen
+    }
+    public class Token
+    {
+        public TokenType Type;
+        public string Value;
+
+        public Token(TokenType type, string value = "")
+        {
+            Type = type;
+            Value = value;
+        }
+
+        public override string ToString() => $"{Type}({Value})";
+    }
+    public class Node
+    {
+        public string Value;
+        public Node Left;
+        public Node Right;
+
+        public Node(string value)
+        {
+            Value = value;
+        }
+    }
+    public class ExpressionEvaluator
     {
         public static string Normalize(string input)
         {
@@ -31,7 +66,7 @@ namespace DSPROJECT
         private static string RemoveSpaces(string s) => s.Replace(" ", "");
         private static void ValidateCharacters(string s)
         {
-            string valid = "0123456789+-*/()^√";
+            string valid = "0123456789+-*/()^√.";
             foreach (char c in s)
             {
                 if (!valid.Contains(c))
@@ -200,189 +235,191 @@ namespace DSPROJECT
             }
             return x;
         }
-        private static string ParenthesizeExpression(string expr)
+        public List<Token> Tokenize(string input)
         {
-            Dictionary<char, int> precedence = new Dictionary<char, int>()
-    {
-    { '^', 3 },
-    { '√', 3 },
-    { '*', 2 },
-    { '/', 2 },
-    { '+', 1 },
-    { '-', 1 }
-    };
+            List<Token> tokens = new List<Token>();
+            int i = 0;
 
-            Stack<string> values = new Stack<string>();
-            Stack<char> ops = new Stack<char>();
-            for (int i = 0; i < expr.Length; i++)
+            while (i < input.Length)
             {
-                char c = expr[i];
-
+                char c = input[i];
                 if (char.IsDigit(c))
                 {
-                    string number = "";
-                    while (i < expr.Length && char.IsDigit(expr[i]))
+                    if (c == '0' && i + 1 < input.Length && char.IsDigit(input[i + 1]))
+                        throw new Exception("Wrong number.");
+
+                    StringBuilder num = new StringBuilder();
+                    num.Append(c);
+                    i++;
+
+                    while (i < input.Length && char.IsDigit(input[i]))
                     {
-                        number += expr[i];
+                        num.Append(input[i]);
                         i++;
                     }
-                    i--;
-                    values.Push(number);
+
+                    tokens.Add(new Token(TokenType.Number, num.ToString()));
+                    continue;
                 }
-                else if (precedence.ContainsKey(c))
+
+                // Variables
+                if (char.IsLetter(c))
                 {
-                    while (ops.Count > 0 && ops.Peek() != '(' &&
-                            precedence[ops.Peek()] >= precedence[c])
+                    StringBuilder var = new StringBuilder();
+                    var.Append(c);
+                    i++;
+
+                    while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '_'))
                     {
-                        string val2 = values.Pop();
-                        string val1 = values.Pop();
-                        char op = ops.Pop();
-                        values.Push($"({val1}{op}{val2})");
+                        var.Append(input[i]);
+                        i++;
                     }
-                    ops.Push(c);
+
+                    // امتیازی: نام متغیر باید با حرف شروع شود
+                    if (!char.IsLetter(var[0]))
+                        throw new Exception("نام متغیر باید با حرف شروع شود.");
+
+                    tokens.Add(new Token(TokenType.Variable, var.ToString()));
+                    continue;
                 }
-                else if (c == '(')
+
+                // Operators & Parentheses
+                switch (c)
                 {
-                    ops.Push(c);
+                    case '+': tokens.Add(new Token(TokenType.Plus)); break;
+                    case '-': tokens.Add(new Token(TokenType.Minus)); break;
+                    case '*': tokens.Add(new Token(TokenType.Multiply)); break;
+                    case '/': tokens.Add(new Token(TokenType.Divide)); break;
+                    case '^': tokens.Add(new Token(TokenType.Power)); break;
+                    case '√': tokens.Add(new Token(TokenType.Radical)); break;
+                    case '(': tokens.Add(new Token(TokenType.LParen)); break;
+                    case ')': tokens.Add(new Token(TokenType.RParen)); break;
+                    default:
+                        throw new Exception($"Wrong character: {c}");
                 }
-                else if (c == ')')
+                i++;
+            }
+            return tokens;
+        }
+        private int Precedence(TokenType t)
+        {
+            switch (t)
+            {
+                case TokenType.Radical: return 4;
+                case TokenType.Power: return 3;
+                case TokenType.Multiply:
+                case TokenType.Divide: return 2;
+                case TokenType.Plus:
+                case TokenType.Minus: return 1;
+                default: return -1;
+            }
+        }
+
+        public Node BuildTree(List<Token> tokens)
+        {
+            Stack<Node> values = new Stack<Node>();
+            Stack<Token> ops = new Stack<Token>();
+
+            void ApplyOperator()
+            {
+                var op = ops.Pop();
+                Node right = values.Pop();
+                Node left = op.Type == TokenType.Radical ? null : values.Pop();
+
+                Node node = new Node(op.Type.ToString())
                 {
-                    while (ops.Peek() != '(')
-                    {
-                        string val2 = values.Pop();
-                        string val1 = values.Pop();
-                        char op = ops.Pop();
-                        values.Push($"({val1}{op}{val2})");
-                    }
+                    Left = left,
+                    Right = right
+                };
+
+                values.Push(node);
+            }
+
+            foreach (var t in tokens)
+            {
+                if (t.Type == TokenType.Number || t.Type == TokenType.Variable)
+                {
+                    values.Push(new Node(t.Value));
+                }
+                else if (t.Type == TokenType.LParen)
+                {
+                    ops.Push(t);
+                }
+                else if (t.Type == TokenType.RParen)
+                {
+                    while (ops.Peek().Type != TokenType.LParen)
+                        ApplyOperator();
                     ops.Pop();
                 }
+                else
+                {
+                    while (ops.Count > 0 && Precedence(ops.Peek().Type) >= Precedence(t.Type))
+                        ApplyOperator();
+
+                    ops.Push(t);
+                }
             }
+
             while (ops.Count > 0)
-            {
-                string val2 = values.Pop();
-                string val1 = values.Pop();
-                char op = ops.Pop();
-                values.Push($"({val1}{op}{val2})");
-            }
+                ApplyOperator();
+
             return values.Pop();
         }
-        private static int Precedence(char op)
+        public double Evaluate(Node node)
         {
-            if (op == '*' || op == '/') return 2;
-            if (op == '+' || op == '-') return 1;
-            return 0;
+            if (double.TryParse(node.Value, out double n))
+                return n;
+
+            double left = node.Left != null ? Evaluate(node.Left) : 0;
+            double right = Evaluate(node.Right);
+
+            switch (node.Value)
+            {
+                case "Plus": return left + right;
+                case "Minus": return left - right;
+                case "Multiply": return left * right;
+                case "Divide":
+                    if (right == 0)
+                        throw new DivideByZeroException("Division by zero. ");
+                    return left / right;
+                case "Power": return Math.Pow(left, right);
+                case "Radical": return Math.Sqrt(right);
+                default:
+                    throw new Exception("Node Unknown: " + node.Value);
+            }
         }
-        public static string GetParenthesizedExpression(string expr)
+        public double Run(string input)
         {
-            return ParenthesizeExpression(expr);
+            string norm = Normalize(input);
+            var tokens = Tokenize(norm);
+            var tree = BuildTree(tokens);
+            return Evaluate(tree);
         }
     }
-    public static class Expression_Builder
-    {
-        static int Precedence(char op)
-        {
-            if (op == '√') return 4;       
-            if (op == '^') return 3;    
-            if (op == '*' || op == '/') return 2;
-            if (op == '+' || op == '-') return 1;
-            return 0;
-        }
-        public static string InToPost(string infix)
-        {
-            Stack<char> stack = new Stack<char>();
-            string output = "";
 
-            foreach (char c in infix)
-            {
-                if (char.IsLetterOrDigit(c))
-                {
-                    output += c;
-                }
-                else if (c == '(')
-                {
-                    stack.Push(c);
-                }
-                else if (c == ')')
-                {
-                    while (stack.Count > 0 && stack.Peek() != '(')
-                        output += stack.Pop();
-                    stack.Pop(); 
-                }
-                else
-                {
-                    while (stack.Count > 0 && stack.Peek() != '(' &&
-                           Precedence(stack.Peek()) >= Precedence(c))
-                    {
-                        output += stack.Pop();
-                    }
-                    stack.Push(c);
-                }
-            }
-
-            while (stack.Count > 0)
-                output += stack.Pop();
-
-            return output;
-        }
-        public static double Evaluate(string postfix)
-        {
-            Stack<double> stack = new Stack<double>();
-
-            foreach (char c in postfix)
-            {
-                if (char.IsDigit(c))
-                {
-                    stack.Push(c - '0');
-                }
-                else if (c == '√')
-                {
-                    double a = stack.Pop();
-                    stack.Push(Math.Sqrt(a));
-                }
-                else
-                {
-                    double b = stack.Pop();
-                    double a = stack.Pop();
-
-                    switch (c)
-                    {
-                        case '+': stack.Push(a + b); break;
-                        case '-': stack.Push(a - b); break;
-                        case '*': stack.Push(a * b); break;
-                        case '/': stack.Push(a / b); break;
-                        case '^': stack.Push(Math.Pow(a, b)); break;
-                    }
-                }
-            }
-            return stack.Pop();
-        }
-    }
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
             while (true)
             {
+                ExpressionEvaluator engine = new ExpressionEvaluator();
+                Console.WriteLine("Enter Input:");
+                string input = Console.ReadLine();
                 try
                 {
-                    Console.Write("Enter input: ");
-                    string? input = Console.ReadLine();
-
-                    if (string.IsNullOrWhiteSpace(input))
-                        continue;
-                    string normalized = Normalizer.Normalize(input);
-                   // string parenthesized = Normalizer.ParenthesizeExpression(normalized);
-                    Console.WriteLine(normalized);
-                    string parenthesized = Normalizer.GetParenthesizedExpression(normalized);
-                    Console.WriteLine(parenthesized);
+                    double result = engine.Run(input);
+                    Console.WriteLine("result: " + result);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error ==> " + ex.Message);
-                    Console.WriteLine("Please Try Again.\n");
+                    Console.WriteLine("new Error : " + ex.Message);
                 }
             }
         }
     }
-
 }
