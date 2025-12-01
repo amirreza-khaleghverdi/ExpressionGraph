@@ -49,7 +49,7 @@ public class Tokenizer
                 if (!char.IsLetter(var[0]))
                     throw new Exception("Variable must start with a letter.");
 
-                tokens.Add(var.ToString()); // <-- add as string
+                tokens.Add(var.ToString());
                 continue;
             }
 

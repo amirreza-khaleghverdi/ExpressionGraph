@@ -27,10 +27,10 @@ public partial class MainWindow : Window
     void DrawTree(node root)
     {
         TreeCanvas.Children.Clear();
-        DrawNode(root, 220, 20, 80);
+        DrawNode(root, 220, 20, 80, 80);
     }
 
-    void DrawNode(node n, double x, double y, double offset)
+    void DrawNode(node n, double x, double y, double x_offset, double y_offset)
     {
         if (n == null) return;
 
@@ -42,8 +42,8 @@ public partial class MainWindow : Window
             Stroke = Brushes.Black,
             StrokeThickness = 2
         };
-        Canvas.SetLeft(circle, x - 17.5);
-        Canvas.SetTop(circle, y - 17.5);
+        Canvas.SetLeft(circle, x - circle.Width/2);
+        Canvas.SetTop(circle, y - circle.Height/2);
         TreeCanvas.Children.Add(circle);
 
 
@@ -63,15 +63,15 @@ public partial class MainWindow : Window
             Line line = new Line
             {
                 X1 = x,
-                Y1 = y + 16,
-                X2 = x - offset,
-                Y2 = y + 80,
+                Y1 = y + circle.Height/2,
+                X2 = x - x_offset,
+                Y2 = y + y_offset,
                 Stroke = Brushes.Black,
                 StrokeThickness = 2
             };
             TreeCanvas.Children.Add(line);
 
-            DrawNode(n.Left, x - offset, y + 80, offset * 0.7);
+            DrawNode(n.Left, x - x_offset, y + y_offset, x_offset * 0.7, y_offset);
         }
 
 
@@ -80,30 +80,61 @@ public partial class MainWindow : Window
             Line line = new Line
             {
                 X1 = x,
-                Y1 = y + 16,
-                X2 = x + offset,
-                Y2 = y + 80,
+                Y1 = y + circle.Height/2,
+                X2 = x + x_offset,
+                Y2 = y + y_offset,
                 Stroke = Brushes.Black,
                 StrokeThickness = 2
             };
             TreeCanvas.Children.Add(line);
 
-            DrawNode(n.Right, x + offset, y + 80, offset * 0.7);
+            DrawNode(n.Right, x + x_offset, y + y_offset, x_offset * 0.7, y_offset);
         }
     }
 
     private void Result_Button(object sender, RoutedEventArgs e)
     {
-        string input = InputBox.Text;
+        calculate_result(InputBox.Text);
+    }
 
-        string normalized = Preprocess.Normalize(input);
-        List<string> tokenized = Tokenizer.Tokenize(normalized);
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        Button button = sender as Button;
 
-        expression_tree Tree = new expression_tree(tokenized);
-        node root = Tree.ParseAddSub();
-        DrawTree(root);
+        switch (button.Content.ToString())
+        {
+            case "=":
+                calculate_result(Cal_Text.Text);
+                break;
 
-        double result = evaluator.Evaluate(root);
-        Cal_Text.Text = Convert.ToString(result);
+            case "C":
+                Cal_Text.Text="";
+                break;
+
+            default:
+                Cal_Text.Text+=button.Content.ToString();
+                break;
+        }
+    }
+
+    private void calculate_result(string input)
+    {
+        try
+        {
+            string normalized = Preprocess.Normalize(input);
+            List<string> tokenized = Tokenizer.Tokenize(normalized);
+
+            expression_tree Tree = new expression_tree(tokenized);
+            node root = Tree.ParseAddSub();
+            DrawTree(root);
+
+            double result = evaluator.Evaluate(root);
+            Cal_Text.Text = Convert.ToString(result);
+        }
+        catch (Exception ex)
+        {
+            InputBox.Text = "error" + ex.Message;
+        }
+
     }
 }
