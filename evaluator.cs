@@ -12,7 +12,7 @@ public static class evaluator
         return EvaluatePostfix(root);
     }
 
-    private static double EvaluatePostfix(node root)
+    static double EvaluatePostfix(node root)
     {
         if (root.Left == null && root.Right == null)
         {

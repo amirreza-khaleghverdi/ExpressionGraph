@@ -1,0 +1,108 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Background="Black">
+                    <ScrollViewer>
+                        <Canvas x:Name="TreeCanvas"
+                        Background="White"
+                        Margin="20"/>
+                    </ScrollViewer>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Margin="40" 
+                        Background="AntiqueWhite"
+                        BorderBrush="Black"
+                        BorderThickness="3.5"
+                        CornerRadius="15">
+                        <StackPanel>
+
+                            <Grid>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                            </Grid>
+
+                            <StackPanel Grid.Row="0">
+                                <Label HorizontalAlignment="Center">calculator</Label>
+                                <TextBlock Background="White" 
+                                Margin="5" Padding="3"></TextBlock>
+                                <StackPanel Margin="10">
+                                </StackPanel>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+
+                                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
+                                    <Button Content="7" Margin="10,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="8" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="9" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="C" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="=" Margin="5,0,10,0" Padding="5,0,5,0" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
+                                    <Button Content="4" Margin="10,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="5" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="6" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="+" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="-" Margin="5,0,10,0" Padding="5,0,5,0" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,5">
+                                    <Button Content="1" Margin="10,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="2" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="3" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="*" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="/" Margin="5,0,10,0" Padding="5,0,5,0" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="3" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,10">
+                                    <Button Content="0" Margin="10,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="(" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content=")" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="^" Margin="5,0,5,0" Padding="5,0,5,0" />
+                                    <Button Content="√" Margin="5,0,10,0" Padding="5,0,5,0" />
+                                </StackPanel>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <StackPanel Grid.Row="1" Background="Black" Margin="10">
+                        <TextBox Padding="10"/>
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+</Window>
