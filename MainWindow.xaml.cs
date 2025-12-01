@@ -22,19 +22,12 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
-
-        var tokens = new List<string> { "3", "+", "4", "*", "2" };
-        expression_tree parser = new expression_tree(tokens);
-
-        node root = parser.ParseAddSub();
-
-        DrawTree(root);
     }
 
     void DrawTree(node root)
     {
         TreeCanvas.Children.Clear();
-        DrawNode(root, 220, 20, 60);
+        DrawNode(root, 220, 20, 80);
     }
 
     void DrawNode(node n, double x, double y, double offset)
@@ -78,7 +71,7 @@ public partial class MainWindow : Window
             };
             TreeCanvas.Children.Add(line);
 
-            DrawNode(n.Left, x - offset, y + 80, offset * 0.6);
+            DrawNode(n.Left, x - offset, y + 80, offset * 0.7);
         }
 
 
@@ -95,7 +88,7 @@ public partial class MainWindow : Window
             };
             TreeCanvas.Children.Add(line);
 
-            DrawNode(n.Right, x + offset, y + 80, offset * 0.6);
+            DrawNode(n.Right, x + offset, y + 80, offset * 0.7);
         }
     }
 
