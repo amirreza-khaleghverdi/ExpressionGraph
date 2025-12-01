@@ -26,7 +26,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
-                </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
 
                     <Border Grid.Row="0" Margin="40" 
                         Background="AntiqueWhite"
@@ -45,7 +45,7 @@
 
                             <StackPanel Grid.Row="0">
                                 <Label HorizontalAlignment="Center">calculator</Label>
-                                <TextBlock Background="White" 
+                                <TextBlock x:Name="Cal_Text" Background="White" 
                                 Margin="5" Padding="3"></TextBlock>
                                 <StackPanel Margin="10">
                                 </StackPanel>
@@ -95,11 +95,25 @@
                         </StackPanel>
                     </Border>
 
-                    <StackPanel Grid.Row="1" Background="Black" Margin="10">
-                        <TextBox Padding="10"/>
-                    </StackPanel>
-                </Grid>
+                    <Grid Grid.Row="1" Background="White" Margin="35">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
+                        <TextBox x:Name="InputBox"
+                         Padding="10"
+                         Grid.Column="0"
+                         Margin="0 0 10 0"/>
+
+                        <Button Content="Result"
+                        Background="Beige"
+                        Grid.Column="1"
+                        Padding="10"
+                        Click="Result_Button"/>
+                    </Grid>
+
+                </Grid>
 
             </Grid>
             

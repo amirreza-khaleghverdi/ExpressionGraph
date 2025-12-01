@@ -1,4 +1,5 @@
-﻿using Expression_Tree;
+﻿using Evaluator;
+using Expression_Tree;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -96,5 +97,20 @@ public partial class MainWindow : Window
 
             DrawNode(n.Right, x + offset, y + 80, offset * 0.6);
         }
+    }
+
+    private void Result_Button(object sender, RoutedEventArgs e)
+    {
+        string input = InputBox.Text;
+
+        string normalized = Preprocess.Normalize(input);
+        List<string> tokenized = Tokenizer.Tokenize(normalized);
+
+        expression_tree Tree = new expression_tree(tokenized);
+        node root = Tree.ParseAddSub();
+        DrawTree(root);
+
+        double result = evaluator.Evaluate(root);
+        Cal_Text.Text = Convert.ToString(result);
     }
 }
