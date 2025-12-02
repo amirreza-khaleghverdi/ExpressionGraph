@@ -1,7 +1,6 @@
 using Expression_Tree;
 
 namespace Evaluator;
-
 public static class evaluator
 {
     public static double Evaluate(node root)

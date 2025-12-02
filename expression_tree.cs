@@ -59,6 +59,7 @@ namespace Expression_Tree
             precedence["/"] = mulDiv;
             precedence["^"] = powRad;
             precedence["√"] = powRad;
+             
         }
         public node Parse()
         {
