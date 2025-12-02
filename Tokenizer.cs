@@ -8,7 +8,6 @@ public class Tokenizer
     {
         List<string> tokens = new List<string>();
         int i = 0;
-
         while (i < input.Length)
         {
             char c = input[i];
@@ -30,14 +29,13 @@ public class Tokenizer
             }
             if (char.IsLetter(c))
             {
-                StringBuilder func = new StringBuilder();
+                StringBuilder name_variable = new StringBuilder();
                 while (i < input.Length && char.IsLetter(input[i]))
                 {
-                    func.Append(input[i]);
+                    name_variable.Append(input[i]);
                     i++;
                 }
-
-                tokens.Add(func.ToString());
+                tokens.Add(name_variable.ToString());
                 continue;
             }
             switch (c)
@@ -55,7 +53,6 @@ public class Tokenizer
             }
             i++;
         }
-
         return tokens;
     }
 }

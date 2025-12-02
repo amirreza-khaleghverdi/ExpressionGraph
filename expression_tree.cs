@@ -92,7 +92,6 @@ namespace Expression_Tree
         private node ParsePrimary()
         {
             string tok = Current();
-
             if (tok == null)
                 throw new Exception("Unexpected end of expression");
             if (tok == "sin" || tok == "cos" || tok == "tan" || tok == "cot")

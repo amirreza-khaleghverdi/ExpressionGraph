@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-
-
 public class Preprocess
 {
     public static string Normalize(string input)
@@ -12,23 +10,21 @@ public class Preprocess
         if (string.IsNullOrWhiteSpace(input))
             return "";
         input = RemoveSpaces(input);
-        //ValidateCharacters(input);
+        ValidateCharacters(input);
         input = fix_number_startwithzero(input);
-        input = SimplifySigns(input);
+        input = simplesigns(input);
         input = FixLeadingSigns(input);
         input = RemoveUnaryPlusInsideParentheses(input);
         input = Removeafter_div_or_multi(input);
         invaliddivide(input);
         //invaliddivideandmulti(input);
         //invalidPower_Square(input);
-        //input = fix_if_Invaliddivide_or_multi(input);
-        //input = fix_if__Invalidpower_or_square(input);
         return input;
     } 
     static string RemoveSpaces(string s) => s.Replace(" ", "");
     static void ValidateCharacters(string s)
     {
-        string valid = "0123456789+-*/()^√.";
+        string valid = "0123456789+-*/()^√.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
         foreach (char c in s)
         {
             if (!valid.Contains(c))
@@ -96,30 +92,6 @@ public class Preprocess
             }
         }
     }
-    private static string fix_if_Invaliddivide_or_multi(string s)
-    {
-        if (s[0] == '*' || s[0] == '/')
-        {
-            s.Remove(0, 1);
-        }
-        if (s[s.Length - 1] == '*' || s[s.Length - 1] == '/')
-        {
-            s.Remove(s.Length - 1, 1);
-        }
-        return s;
-    }
-    private static string fix_if__Invalidpower_or_square(string s)
-    {
-        if (s[0] == '^' || s[0] == '√')
-        {
-            s.Remove(0, 1);
-        }
-        if (s[s.Length - 1] == '^' || s[s.Length - 1] == '√')
-        {
-            s.Remove(s.Length - 1, 1);
-        }
-        return s;
-    }
     private static string fix_number_startwithzero(string s)
     {
         string numberPattern = @"\d+";
@@ -134,7 +106,7 @@ public class Preprocess
         });
     }
 
-    private static string SimplifySigns(string s)
+    private static string simplesigns(string s)
     {
         var result = new StringBuilder();
         int i = 0;
@@ -165,7 +137,6 @@ public class Preprocess
         if (s.Length > 1 && s[0] == '+') return s.Substring(1);
         return s;
     }
-
     private static string RemoveUnaryPlusInsideParentheses(string s)
     {
         var result = new StringBuilder();

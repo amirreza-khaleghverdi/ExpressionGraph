@@ -44,10 +44,8 @@ public static class evaluator
                 _ => throw new Exception("Unknown function")
             };
         }
-
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
-
         return root.Value switch
         {
             "+" => left + right,
