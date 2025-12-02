@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\dsa proj\\IUST-DSA-Phase1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\normalizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:normalizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\normalizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:normalizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E87C8F1A-0D8C-4342-9FD2-86EE93DC643E}|WpfApp1.csproj|solutionrelative:tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Tokenizer.cs",
-              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Tokenizer.cs",
-              "RelativeDocumentMoniker": "Tokenizer.cs",
-              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Tokenizer.cs",
-              "RelativeToolTip": "Tokenizer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T19:46:06.642Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -51,7 +38,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Tokenizer.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Tokenizer.cs",
+              "RelativeDocumentMoniker": "Tokenizer.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Tokenizer.cs",
+              "RelativeToolTip": "Tokenizer.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwBcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:46:06.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Normalizer.cs",
               "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Normalizer.cs",
               "RelativeDocumentMoniker": "Normalizer.cs",
@@ -64,25 +63,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAADwv4AAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T08:48:43.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml*",
+              "RelativeToolTip": "MainWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-12-01T08:48:29.336Z",
               "EditorCaption": ""

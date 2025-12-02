@@ -100,20 +100,33 @@ public partial class MainWindow : Window
     private void Button_Click(object sender, RoutedEventArgs e)
     {
         Button button = sender as Button;
+        string text = Cal_Text.Text;
 
-        switch (button.Content.ToString())
+        try
         {
-            case "=":
-                calculate_result(Cal_Text.Text);
-                break;
+            switch (button.Content.ToString())
+            {
+                case "=":
+                    calculate_result(Cal_Text.Text);
+                    break;
 
-            case "C":
-                Cal_Text.Text="";
-                break;
+                case "C":
+                    text = "";
+                    break;
 
-            default:
-                Cal_Text.Text+=button.Content.ToString();
-                break;
+                case "Del":
+                    text = text.Remove(text.Length - 1);
+                    Cal_Text.Text = text;
+                    break;
+
+                default:
+                    Cal_Text.Text += button.Content.ToString();
+                    break;
+            }
+        }
+        catch (Exception ex)
+        {
+            InputBox.Text = "error" + ex.Message;
         }
     }
 
