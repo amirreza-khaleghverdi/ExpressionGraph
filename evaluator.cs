@@ -33,13 +33,14 @@ public static class evaluator
             root.Value == "tan" || root.Value == "cot")
         {
             double arg = EvaluatePostfix(root.Left, vars);
+            arg=(arg/180)*Math.PI;
 
             return root.Value switch
             {
-                "sin" => Math.Sin(arg),
-                "cos" => Math.Cos(arg),
-                "tan" => Math.Tan(arg),
-                "cot" => 1 / Math.Tan(arg),
+                "sin" => Math.Round(Math.Sin(arg), 10),
+                "cos" => Math.Round(Math.Cos(arg), 10),
+                "tan" =>  Math.Round(Math.Tan(arg),10),
+                "cot" => Math.Round(1 / Math.Tan(arg),10),
                 _ => throw new Exception("Unknown function")
             };
         }
