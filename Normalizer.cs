@@ -12,19 +12,19 @@ public class Preprocess
         if (string.IsNullOrWhiteSpace(input))
             return "";
         input = RemoveSpaces(input);
-        ValidateCharacters(input);
+        //ValidateCharacters(input);
         input = fix_number_startwithzero(input);
         input = SimplifySigns(input);
         input = FixLeadingSigns(input);
         input = RemoveUnaryPlusInsideParentheses(input);
         input = Removeafter_div_or_multi(input);
         invaliddivide(input);
-        invaliddivideandmulti(input);
-        invalidPower_Square(input);
+        //invaliddivideandmulti(input);
+        //invalidPower_Square(input);
         //input = fix_if_Invaliddivide_or_multi(input);
         //input = fix_if__Invalidpower_or_square(input);
         return input;
-    }
+    } 
     static string RemoveSpaces(string s) => s.Replace(" ", "");
     static void ValidateCharacters(string s)
     {
