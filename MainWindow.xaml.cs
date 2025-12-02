@@ -38,7 +38,7 @@ public partial class MainWindow : Window
         {
             Width = 35,
             Height = 35,
-            Fill = Brushes.LightSkyBlue,
+            Fill = Brushes.WhiteSmoke,
             Stroke = Brushes.Black,
             StrokeThickness = 2
         };
@@ -111,7 +111,7 @@ public partial class MainWindow : Window
                     break;
 
                 case "C":
-                    text = "";
+                    Cal_Text.Text = "";
                     break;
 
                 case "Del":
@@ -126,7 +126,7 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            InputBox.Text = "error" + ex.Message;
+            InputBox.Text = "error " + ex.Message;
         }
     }
 
@@ -146,7 +146,7 @@ public partial class MainWindow : Window
         }
         catch (Exception ex)
         {
-            InputBox.Text = "error" + ex.Message;
+            InputBox.Text = "error " + ex.Message;
         }
 
     }

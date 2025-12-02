@@ -10,7 +10,7 @@ public class Preprocess
     public static string Normalize(string input)
     {
         if (string.IsNullOrWhiteSpace(input))
-            return "";
+            throw new Exception ("input cannot be empty");
         input = RemoveSpaces(input);
         ValidateCharacters(input);
         input = fix_number_startwithzero(input);
