@@ -33,9 +33,10 @@ public static class evaluator
             root.Value == "tan" || root.Value == "cot")
         {
             double arg = EvaluatePostfix(root.Left, vars);
-            arg=(arg/180)*Math.PI;
+            arg=(arg/180.0)*Math.PI;
 
-            return root.Value switch
+
+            double val= root.Value switch
             {
                 "sin" => Math.Round(Math.Sin(arg), 10),
                 "cos" => Math.Round(Math.Cos(arg), 10),
@@ -43,6 +44,27 @@ public static class evaluator
                 "cot" => Math.Round(1 / Math.Tan(arg),10),
                 _ => throw new Exception("Unknown function")
             };
+            if (Math.Abs(val) < 1e-10)
+            {
+                val = 0;
+            }
+            if (Math.Abs(val-0.5)< 1e-10)
+            {
+                val = 0.5;
+            }
+            if (Math.Abs(val + 0.5) < 1e-10) 
+            {
+                val = -0.5;
+            }
+            if (Math.Abs(val-1)<1e-10)
+            {
+                val = 1;
+            }
+            if (Math.Abs(val + 1) < 1e-10)
+            {
+                val = -1;
+            }
+            return val;
         }
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
