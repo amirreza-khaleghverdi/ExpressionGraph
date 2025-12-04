@@ -28,33 +28,31 @@ public static class evaluator
         }
 
         if (root.Value == "u-")
-            return -EvaluatePostfix(root.Left, vars);
-
-        if (root.Value == "sin" || root.Value == "cos" ||
-            root.Value == "tan" || root.Value == "cot")
         {
-            double arg = EvaluatePostfix(root.Left, vars);
-
-            return root.Value switch
-            {
-                "sin" => Math.Sin(arg),
-                "cos" => Math.Cos(arg),
-                "tan" => Math.Tan(arg),
-                "cot" => 1 / Math.Tan(arg),
-                _ => throw new Exception("Unknown function")
-            };
+            return -EvaluatePostfix(root.Left, vars);
         }
+           
+        
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
-        return root.Value switch
+
+        switch (root.Value)
         {
-            "+" => left + right,
-            "-" => left - right,
-            "*" => left * right,
-            "/" => left / right,
-            "^" => Math.Pow(left, right),
-            "√" => Math.Pow(right, 1.0 / left),
-            _ => throw new Exception("Unknown operator: " + root.Value)
-        };
+            case "+": return left + right;
+            case "-": return left - right;
+            case "*": return left * right;
+            case "/": return left / right;
+
+            case "^": return Math.Pow(left, right);
+            case "√": return Math.Pow(right, 1.0 / left);
+
+            case "sin": return Math.Sin(left);
+            case "cos": return Math.Cos(left);
+            case "tan": return Math.Tan(left);
+            case "cot": return 1 / Math.Tan(left);
+
+            default:
+                throw new Exception("Unknown operator: " + root.Value);
+        }
     }
 }

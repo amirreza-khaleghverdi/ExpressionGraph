@@ -30,7 +30,7 @@ namespace Expression_Tree
             SetDefaultPrecedence();
         }
 
-        private string Current() =>
+        private string? Current() =>
             index < tokens.Count ? tokens[index] : null;
 
         private string Next()

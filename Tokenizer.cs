@@ -11,12 +11,13 @@ public class Tokenizer
         while (i < input.Length)
         {
             char c = input[i];
+            // Numbers
             if (char.IsDigit(c) || c == '.')
             {
                 StringBuilder num = new StringBuilder();
                 num.Append(c);
                 i++;
-                bool hasDot = c == '.'; 
+                bool hasDot = c == '.';
                 while (i < input.Length && (char.IsDigit(input[i]) || (!hasDot && input[i] == '.')))
                 {
                     if (input[i] == '.')
@@ -27,6 +28,8 @@ public class Tokenizer
                 tokens.Add(num.ToString());
                 continue;
             }
+
+            // Variables
             if (char.IsLetter(c))
             {
                 StringBuilder name_variable = new StringBuilder();
@@ -35,9 +38,11 @@ public class Tokenizer
                     name_variable.Append(input[i]);
                     i++;
                 }
-                tokens.Add(name_variable.ToString());
+                tokens.Add(name_variable.ToString()); // <-- add as string
                 continue;
             }
+
+            // Operators & parentheses
             switch (c)
             {
                 case '+': tokens.Add("+"); break;
