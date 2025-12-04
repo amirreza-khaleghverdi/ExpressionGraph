@@ -1,0 +1,15 @@
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net9.0\DSA PROJECT.exe
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net9.0\DSA PROJECT.deps.json
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net9.0\DSA PROJECT.runtimeconfig.json
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net9.0\DSA PROJECT.dll
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net9.0\DSA PROJECT.pdb
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.GeneratedMSBuildEditorConfig.editorconfig
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.AssemblyInfoInputs.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.AssemblyInfo.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.csproj.CoreCompileInputs.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.sourcelink.json
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.dll
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\refint\DSA PROJECT.dll
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.pdb
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\DSA PROJECT.genruntimeconfig.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0\ref\DSA PROJECT.dll

@@ -6,27 +6,35 @@ public static class evaluator
 {
     public static double Evaluate(node root)
     {
+        return Evaluate(root, new List<Tuple<string, double>>());
+    }
+    public static double Evaluate(node root, List<Tuple<string, double>> vars)
+    {
         if (root == null)
             throw new Exception("Invalid expression tree");
 
-        return EvaluatePostfix(root);
+        return EvaluatePostfix(root, vars);
     }
-
-    static double EvaluatePostfix(node root)
+    private static double EvaluatePostfix(node root, List<Tuple<string, double>> vars)
     {
         if (root.Left == null && root.Right == null)
         {
-            return double.Parse(root.Value);
+            if (double.TryParse(root.Value, out double num))
+                return num;
+
+            var variable = vars.FirstOrDefault(v => v.Item1 == root.Value);
+
+            return variable != null ? variable.Item2 : 0;
         }
 
         if (root.Value == "u-")
         {
-            double val = EvaluatePostfix(root.Left);
-            return -val;
+            return -EvaluatePostfix(root.Left, vars);
         }
-
-        double left = EvaluatePostfix(root.Left);
-        double right = EvaluatePostfix(root.Right);
+           
+        
+        double left = EvaluatePostfix(root.Left, vars);
+        double right = EvaluatePostfix(root.Right, vars);
 
         switch (root.Value)
         {
@@ -37,6 +45,11 @@ public static class evaluator
 
             case "^": return Math.Pow(left, right);
             case "√": return Math.Pow(right, 1.0 / left);
+
+            case "sin": return Math.Sin(left);
+            case "cos": return Math.Cos(left);
+            case "tan": return Math.Tan(left);
+            case "cot": return 1 / Math.Tan(left);
 
             default:
                 throw new Exception("Unknown operator: " + root.Value);
