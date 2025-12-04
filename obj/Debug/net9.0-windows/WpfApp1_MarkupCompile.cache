@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 E:\dsa proj\IUST-DSA-Phase1\App.xaml
-11407045341
+3-826727044
 
-8-1394777789
+10-40741650
 200-1310591092
-MainWindow.xaml;
+MainWindow.xaml;Views\Window1.xaml;Views\Window2.xaml;
 
 False
 

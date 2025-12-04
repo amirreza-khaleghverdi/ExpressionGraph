@@ -39,3 +39,7 @@ E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\refint\WpfApp1.dll
 E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\WpfApp1.pdb
 E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\WpfApp1.genruntimeconfig.cache
 E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\ref\WpfApp1.dll
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\Views\Window1.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\Views\Window2.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\Views\Window1.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net9.0-windows\Views\Window2.baml

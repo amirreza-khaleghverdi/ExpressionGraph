@@ -7,123 +7,137 @@
         mc:Ignorable="d"
         Title="Amir_Sadra_calculator" Height="450" Width="800">
     <Grid Background="LightSlateGray" >
-        <StackPanel Margin="10">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0" Background="Black">
-                    <ScrollViewer>
-                        <Canvas x:Name="TreeCanvas"
+        <DockPanel>
+
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="homepage" Click="GoPage1_Click"/>
+                <MenuItem Header="variable" Click="GoPage2_Click"/>
+                <MenuItem Header="variable" Click="GoPage3_Click"/>
+            </Menu>
+
+            <!-- CONTENT AREA -->
+            <Frame x:Name="MainFrame"/>
+
+            <StackPanel Margin="0,10,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Background="Black">
+                        <ScrollViewer>
+                            <Canvas x:Name="TreeCanvas"
                         Background="AntiqueWhite"
                         Margin="20"/>
-                    </ScrollViewer>
-                </Grid>
+                        </ScrollViewer>
+                    </Grid>
 
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
-                    <Label FontSize="14" HorizontalAlignment="Center" Content="iust DSA project phase 1"/>
+                        <Label FontSize="14" HorizontalAlignment="Center" Content="iust DSA project phase 1"/>
 
-                    <Border Grid.Row="0" Margin="40" 
+                        <Border Grid.Row="0" Margin="40" 
                         Background="AntiqueWhite"
                         BorderBrush="Black"
                         BorderThickness="3.5"
                         CornerRadius="15">
-                        <StackPanel>
+                            <StackPanel>
 
-                            <Grid>
+                                <Grid>
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="3*"/>
-                                </Grid.RowDefinitions>
-                            </Grid>
-
-                            <StackPanel Grid.Row="0">
-                                <Label HorizontalAlignment="Center">calculator</Label>
-                                <TextBlock x:Name="Cal_Text" Background="White" 
-                                Margin="5" Padding="3"></TextBlock>
-                                <StackPanel Margin="10">
-                                </StackPanel>
-
-                                <Grid Grid.Row="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="3*"/>
                                     </Grid.RowDefinitions>
                                 </Grid>
 
-                                <StackPanel>
-                                    <Button Content="Del" Margin="19,0,19,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                </StackPanel>
+                                <StackPanel Grid.Row="0">
+                                    <Label HorizontalAlignment="Center">calculator</Label>
+                                    <TextBlock x:Name="Cal_Text" Background="White" 
+                                Margin="5" Padding="3"></TextBlock>
+                                    <StackPanel Margin="10">
+                                    </StackPanel>
 
-                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
-                                    <Button Content="7" Margin="10,0,5,0" Padding="5,0,5,0"  Click="Button_Click"/>
-                                    <Button Content="8" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click" />
-                                    <Button Content="9" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="C" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="=" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                </StackPanel>
+                                    <Grid Grid.Row="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                    </Grid>
 
-                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
-                                    <Button Content="4" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="5" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="6" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="+" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="-" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                </StackPanel>
+                                    <StackPanel>
+                                        <Button Content="Del" Margin="19,0,19,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                    </StackPanel>
 
-                                <StackPanel Grid.Row="3" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,5">
-                                    <Button Content="1" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="2" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="3" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="*" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="/" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                </StackPanel>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
+                                        <Button Content="7" Margin="10,0,5,0" Padding="5,0,5,0"  Click="Button_Click"/>
+                                        <Button Content="8" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click" />
+                                        <Button Content="9" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="C" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="=" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                    </StackPanel>
 
-                                <StackPanel Grid.Row="4" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,10">
-                                    <Button Content="0" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="(" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content=")" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="^" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                    <Button Content="√" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
-                                </StackPanel>
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10,5,10,5">
+                                        <Button Content="4" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="5" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="6" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="+" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="-" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                    </StackPanel>
 
+                                    <StackPanel Grid.Row="3" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,5">
+                                        <Button Content="1" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="2" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="3" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="*" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="/" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="4" Orientation="Horizontal"  HorizontalAlignment="Center" Margin="10,5,10,10">
+                                        <Button Content="0" Margin="10,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="(" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content=")" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="^" Margin="5,0,5,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                        <Button Content="√" Margin="5,0,10,0" Padding="5,0,5,0" Click="Button_Click"/>
+                                    </StackPanel>
+
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </Border>
+                        </Border>
 
-                    <Grid Grid.Row="1" Margin="35">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Row="1" Margin="35">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
 
-                        <TextBox x:Name="InputBox"
+                            <TextBox x:Name="InputBox"
                          Padding="10"
                          Grid.Column="0"
                          Margin="0 0 10 0"/>
 
-                        <Button Content="Result"
+                            <Button Content="Result"
                         Background="Beige"
                         Grid.Column="1"
                         Padding="10"
                         Click="Result_Button"/>
+                        </Grid>
+
                     </Grid>
 
                 </Grid>
 
-            </Grid>
-            
-        </StackPanel>
+            </StackPanel>
+
+        </DockPanel>
     </Grid>
 </Window>
