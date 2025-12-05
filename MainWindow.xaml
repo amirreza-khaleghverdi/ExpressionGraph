@@ -12,7 +12,7 @@
 
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="homepage" Click="GoPage1_Click"/>
-                <MenuItem Header="variable" Click="GoPage2_Click"/>
+                <MenuItem Header="precedence" Click="GoPage2_Click"/>
                 <MenuItem Header="variable" Click="GoPage3_Click"/>
             </Menu>
 
