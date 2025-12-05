@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Views;
 
 namespace WpfApp1;
 
@@ -149,5 +150,26 @@ public partial class MainWindow : Window
             InputBox.Text = "error " + ex.Message;
         }
 
+    }
+
+    private void GoPage1_Click(object sender, RoutedEventArgs e)
+    {
+        MainWindow homepage = new();
+        homepage.Show();
+        this.Close();
+    }
+
+    private void GoPage2_Click(object sender, RoutedEventArgs e)
+    {
+        Window1 precedence = new();
+        precedence.Show();
+        this.Close();
+    }
+
+    private void GoPage3_Click(object sender, RoutedEventArgs e)
+    {
+        Window2 variable = new();
+        variable.Show();
+        this.Close();
     }
 }

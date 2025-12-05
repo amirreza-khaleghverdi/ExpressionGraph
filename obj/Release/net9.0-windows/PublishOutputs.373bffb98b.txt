@@ -1,5 +1,0 @@
-C:\Users\TOP\Desktop\WpfApp1.exe
-C:\Users\TOP\Desktop\WpfApp1.dll
-C:\Users\TOP\Desktop\WpfApp1.deps.json
-C:\Users\TOP\Desktop\WpfApp1.runtimeconfig.json
-C:\Users\TOP\Desktop\WpfApp1.pdb
