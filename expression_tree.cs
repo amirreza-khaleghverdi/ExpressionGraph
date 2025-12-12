@@ -115,6 +115,28 @@ namespace Expression_Tree
 
                 return new node(tok, arg);
             }
+            if (tok == "log")
+            {
+                Next();
+                if (Current() != "(") throw new Exception("Expected '('");
+                Next();
+                node valueNode = ParseExpression(0);
+                if (Current() == ",")
+                {
+                    Next();
+                    node baseNode = ParseExpression(0);
+                    if (Current() != ")") throw new Exception("Expected ')'");
+                    Next();
+                    return new node("log", baseNode, valueNode);
+                }
+                else
+                {
+                    if (Current() != ")") throw new Exception("Expected ')'");
+                    Next();
+                    return new node("log", new node("10"), valueNode);
+                }
+            }
+
             if (tok == "-")
             {
                 Next();

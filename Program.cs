@@ -23,7 +23,7 @@ class Program
                         Console.Write("Enter Input : ");
                         string? infix = Console.ReadLine();
 
-                        string Normalize = Preprocess.Normalize(infix);
+                        string Normalize = simplification.Normalize(infix);
                         List<string> tokenize = Tokenizer.Tokenize(Normalize);
                         foreach (var x in tokenize) Console.Write(x + " ");
                         expression_tree parser = new expression_tree(tokenize);
@@ -50,7 +50,7 @@ class Program
                             string name = Console.ReadLine();
                             Console.Write("Enter value: ");
                             string inputt = Console.ReadLine();
-                            string normalize = Preprocess.Normalize(inputt);
+                            string normalize = simplification.Normalize(inputt);
                             List<string> tokenizee = Tokenizer.Tokenize(normalize);
                             expression_tree parser = new expression_tree(tokenizee);
                             node roott = parser.Parse();
@@ -60,7 +60,7 @@ class Program
                         }
                         Console.WriteLine("Now Enter your Input for calculate: ");
                         string input = Console.ReadLine();
-                        string Normalize = Preprocess.Normalize(input);
+                        string Normalize = simplification.Normalize(input);
                         List<string> tokenize = Tokenizer.Tokenize(Normalize);
                         expression_tree tree = new expression_tree(tokenize);
                         node root = tree.Parse();
@@ -77,7 +77,7 @@ class Program
                 {
                     try
                     {
-                        Console.WriteLine("Enter the Priority from 1 to 3: ");
+                        Console.WriteLine("Enter the Priority from 1 to 3:  1=MAX_Priority ...");
                         Console.Write("Enter the Add_Sub: "); //
                         int add_sum = int.Parse(Console.ReadLine());
                         Console.Write("Enter the Mul_Div: ");
@@ -86,7 +86,7 @@ class Program
                         int pow_rad = int.Parse(Console.ReadLine()); //
                         Console.Write("Enter Input : ");
                         string? infix = Console.ReadLine();
-                        string Normalize = Preprocess.Normalize(infix);
+                        string Normalize = simplification.Normalize(infix);
                         List<string> tokenize = Tokenizer.Tokenize(Normalize);
                         expression_tree parser = new expression_tree(tokenize);
                         parser.SetPrecedence(add_sum, mul_div, pow_rad);

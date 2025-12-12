@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-public class Preprocess
+public class simplification
 {
     public static string Normalize(string input)
     {
@@ -17,14 +17,12 @@ public class Preprocess
         input = RemoveUnaryPlusInsideParentheses(input);
         input = Removeafter_div_or_multi(input);
         invaliddivide(input);
-        //invaliddivideandmulti(input);
-        //invalidPower_Square(input);
         return input;
     }
     static string RemoveSpaces(string s) => s.Replace(" ", "");
     static void ValidateCharacters(string s)
     {
-        string valid = "0123456789+-*/()^√.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+        string valid = "0123456789+-*/()^√.,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
         foreach (char c in s)
         {
             if (!valid.Contains(c))
@@ -43,53 +41,6 @@ public class Preprocess
         {
             if (s[i] == '/' && s[i + 1] == '0')
                 throw new Exception($"Error ==> Division By Zero.");
-        }
-    }
-    private static void invaliddivideandmulti(string s)
-    {
-        for (int i = 1; i < s.Length - 1; i++)
-        {
-            if (s[i] == '*' || s[i] == '/')
-            {
-                bool leftValid = char.IsDigit(s[i - 1]) || s[i - 1] == ')';
-                bool rightValid = char.IsDigit(s[i + 1]) || s[i + 1] == '(' || s[i + 1] == '-';
-
-                if (!leftValid || !rightValid)
-                {
-                    throw new Exception("Invalid divide or multiplication. Try again.");
-                }
-            }
-        }
-    }
-    private static void invalidPower_Square(string s)
-    {
-        if (s[0] == '^' || s[s.Length - 1] == '^' || s[s.Length - 1] == '√')
-        {
-            throw new Exception("Invalid Power or Square =>First or Last charachter .Try again");
-        }
-        for (int i = 1; i < s.Length - 1; i++)
-        {
-            if (s[i] == '√')
-            {
-                if (s[i + 1] == '-')
-                {
-                    throw new Exception("Invalid square => minus under square.Try again");
-                }
-            }
-            if (s[i] == '^' || s[i] == '√')
-            {
-                if (s[i + 1] == '+')
-                {
-                    s.Remove(i + 1, 1);
-                }
-            }
-            if (s[i] == '+' || s[i] == '-')
-            {
-                if (s[i + 1] == '^' || s[i + 1] == '√')
-                {
-                    s.Remove(i, 1);
-                }
-            }
         }
     }
     private static string fix_number_startwithzero(string s)

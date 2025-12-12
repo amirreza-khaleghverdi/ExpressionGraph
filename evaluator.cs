@@ -1,4 +1,5 @@
 using Expression_Tree;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Evaluator;
 public static class evaluator
@@ -66,6 +67,16 @@ public static class evaluator
             }
             return val;
         }
+        if (root.Value == "log")
+        {
+            double Base = EvaluatePostfix(root.Left, vars);
+            double  INN= EvaluatePostfix(root.Right, vars);
+            if (Base<=0 || INN <= 0)
+            {
+                throw new Exception("minus or valid base and value");
+            }
+            return Math.Log(INN)/Math.Log(Base);
+        }
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
         if (root.Value == "/")
@@ -74,13 +85,20 @@ public static class evaluator
                 throw new DivideByZeroException("Error ==> Division By Zero!");
             return left / right;
         }
+        if (root.Value == "√")
+        {
+            if (right<0)
+            {
+                throw new Exception("Error ==> Minus Under Radikal!");
+            }
+            return Math.Pow(right, 1.0 / left);
+        }
         return root.Value switch
         {
             "+" => left + right,
             "-" => left - right,
             "*" => left * right,
             "^" => Math.Pow(left, right),
-            "√" => Math.Pow(right, 1.0 / left),
             _ => throw new Exception("Unknown operator: " + root.Value)
         };
     }
