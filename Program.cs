@@ -77,7 +77,7 @@ class Program
                 {
                     try
                     {
-                        Console.WriteLine("Enter the Priority from 1 to 3:  1=MAX_Priority ...");
+                        Console.WriteLine("Enter the Priority from 1 to 3:  3=MAX_Priority ...");
                         Console.Write("Enter the Add_Sub: "); //
                         int add_sum = int.Parse(Console.ReadLine());
                         Console.Write("Enter the Mul_Div: ");
