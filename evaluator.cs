@@ -35,7 +35,7 @@ public static class evaluator
             double arg = EvaluatePostfix(root.Left, vars);
             arg=(arg/180.0)*Math.PI;
 
-
+            
             double val= root.Value switch
             {
                 "sin" => Math.Round(Math.Sin(arg), 10),
@@ -66,6 +66,7 @@ public static class evaluator
             }
             return val;
         }
+
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
         if (root.Value == "/")

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Expression_Tree
 {
+     
     public class node
     {
         public string Value { get; set; }

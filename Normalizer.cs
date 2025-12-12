@@ -61,6 +61,7 @@ public class Preprocess
             }
         }
     }
+     
     private static void invalidPower_Square(string s)
     {
         if (s[0] == '^' || s[s.Length - 1] == '^' || s[s.Length - 1] == '√')
