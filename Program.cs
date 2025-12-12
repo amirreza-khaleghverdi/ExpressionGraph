@@ -12,6 +12,7 @@ class Program
             Console.WriteLine("1.Default Calculate ");
             Console.WriteLine("2.Add Variable");
             Console.WriteLine("3.Change Priority Operator");
+            
             int n = int.Parse(Console.ReadLine());
             Thread.Sleep(100);
             Console.Clear();
