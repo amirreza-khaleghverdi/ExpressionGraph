@@ -74,6 +74,7 @@ public static class evaluator
                 throw new DivideByZeroException("Error ==> Division By Zero!");
             return left / right;
         }
+         
         return root.Value switch
         {
             "+" => left + right,

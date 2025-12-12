@@ -92,7 +92,7 @@ namespace Expression_Tree
 
             return left;
         }
-
+         
         private bool IsRightAssociative(string op)
         {
             return op == "^" || op == "√";
