@@ -26,10 +26,8 @@ public static class evaluator
 
             return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir nam
         }
-
         if (root.Value == "u-")
             return -EvaluatePostfix(root.Left, vars);
-
         if (root.Value == "sin" || root.Value == "cos" ||
             root.Value == "tan" || root.Value == "cot")
         {

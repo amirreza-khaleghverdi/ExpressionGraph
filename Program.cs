@@ -65,8 +65,8 @@ class Program
                         expression_tree tree = new expression_tree(tokenize);
                         node root = tree.Parse();
                         double result = evaluator.Evaluate(root, vars);
-                        Console.WriteLine("Result = " + result);
-                    }
+                            Console.WriteLine("\nResult :" + result.ToString("F3"));
+                        }
                     catch (Exception ex)
                     {
                         Console.WriteLine(" ==> " + ex.Message);

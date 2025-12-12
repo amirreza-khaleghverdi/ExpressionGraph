@@ -56,7 +56,6 @@ public class simplification
             return number;
         });
     }
-
     private static string simplesigns(string s)
     {
         var result = new StringBuilder();

@@ -32,16 +32,15 @@ public class Tokenizer
                 tokens.Add(num.ToString());
                 continue;
             }
-            if (char.IsLetter(c))
+            if (char.IsLetter(c)||c=='_')
             {
                 StringBuilder text = new StringBuilder();
 
-                while (i < input.Length && char.IsLetter(input[i]))
+                while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '_'))
                 {
                     text.Append(input[i]);
                     i++;
                 }
-
                 tokens.Add(text.ToString());
                 continue;
             }
