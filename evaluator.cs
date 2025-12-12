@@ -69,7 +69,7 @@ public static class evaluator
         {
             double Base = EvaluatePostfix(root.Left, vars);
             double  INN= EvaluatePostfix(root.Right, vars);
-            if (Base<=0 || INN <= 0)
+            if (INN <= 0 || Base<=1)
             {
                 throw new Exception("minus or valid base and value");
             }
