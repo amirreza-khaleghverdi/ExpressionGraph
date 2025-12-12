@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 
 namespace Expression_Tree
 {
@@ -60,6 +59,7 @@ namespace Expression_Tree
         }
 
         public node Parse() => ParseExpression(0);
+        
         private node ParseUnary()
         {
             string tok = Current();

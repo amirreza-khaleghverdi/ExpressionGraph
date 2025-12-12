@@ -8,6 +8,7 @@ public static class evaluator
     {
         return Evaluate(root, new List<Tuple<string, double>>());
     }
+
     public static double Evaluate(node root, List<Tuple<string, double>> vars)
     {
         if (root == null)
@@ -26,8 +27,11 @@ public static class evaluator
 
             return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir nam
         }
+
         if (root.Value == "u-")
             return -EvaluatePostfix(root.Left, vars);
+
+        // needs to be checked
         if (root.Value == "sin" || root.Value == "cos" ||
             root.Value == "tan" || root.Value == "cot")
         {
@@ -65,18 +69,24 @@ public static class evaluator
             }
             return val;
         }
+        
+        //need to be checked 
         if (root.Value == "log")
         {
             double Base = EvaluatePostfix(root.Left, vars);
-            double  INN= EvaluatePostfix(root.Right, vars);
-            if (INN <= 0 || Base<=1)
+            double INN = EvaluatePostfix(root.Right, vars);
+            if (INN <= 0 || Base <= 1)
             {
                 throw new Exception("minus or valid base and value");
             }
-            return Math.Log(INN)/Math.Log(Base);
+            return Math.Log(INN) / Math.Log(Base);
         }
+
+
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
+
+        //needs to be checked
         if (root.Value == "/")
         {
             if (Math.Abs(right) < 1e-10)

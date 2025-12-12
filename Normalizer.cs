@@ -43,7 +43,7 @@ public class simplification
                 throw new Exception($"Error ==> Division By Zero.");
         }
     }
-    private static string fix_number_startwithzero(string s)
+    static string fix_number_startwithzero(string s)
     {
         string numberPattern = @"\d+";
         return Regex.Replace(s, numberPattern, match =>
@@ -56,7 +56,7 @@ public class simplification
             return number;
         });
     }
-    private static string simplesigns(string s)
+    static string simplesigns(string s)
     {
         var result = new StringBuilder();
         int i = 0;
@@ -82,12 +82,12 @@ public class simplification
         }
         return result.ToString();
     }
-    private static string FixLeadingSigns(string s)
+    static string FixLeadingSigns(string s)
     {
         if (s.Length > 1 && s[0] == '+') return s.Substring(1);
         return s;
     }
-    private static string RemoveUnaryPlusInsideParentheses(string s)
+    static string RemoveUnaryPlusInsideParentheses(string s)
     {
         var result = new StringBuilder();
         for (int i = 0; i < s.Length; i++)
@@ -104,7 +104,7 @@ public class simplification
         }
         return result.ToString();
     }
-    private static string Removeafter_div_or_multi(string x)
+    static string Removeafter_div_or_multi(string x)
     {
         for (int i = 0; i < x.Length; i++)
         {
