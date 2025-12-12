@@ -23,7 +23,7 @@ public static class evaluator
 
             var variable = vars.FirstOrDefault(v => v.Item1 == root.Value);
 
-            return variable != null ? variable.Item2 : 0;
+            return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir nam
         }
 
         if (root.Value == "u-")
@@ -68,12 +68,17 @@ public static class evaluator
         }
         double left = EvaluatePostfix(root.Left, vars);
         double right = EvaluatePostfix(root.Right, vars);
+        if (root.Value == "/")
+        {
+            if (Math.Abs(right) < 1e-10)
+                throw new DivideByZeroException("Error ==> Division By Zero!");
+            return left / right;
+        }
         return root.Value switch
         {
             "+" => left + right,
             "-" => left - right,
             "*" => left * right,
-            "/" => left / right,
             "^" => Math.Pow(left, right),
             "√" => Math.Pow(right, 1.0 / left),
             _ => throw new Exception("Unknown operator: " + root.Value)

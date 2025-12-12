@@ -16,16 +16,24 @@ class Program
             int n = 1;
             if (n == 1)
             {
-                Console.Write("Enter Input : ");
-                string? infix = Console.ReadLine();
+                try
+                {
+                    Console.Write("Enter Input : ");
+                    string? infix = Console.ReadLine();
 
-                string Normalize = Preprocess.Normalize(infix);
-                List<string> tokenize = Tokenizer.Tokenize(Normalize);
-                foreach (var x in tokenize) Console.Write(x+" ");
-                expression_tree parser = new expression_tree(tokenize);
-                node root = parser.Parse();
-                double result = evaluator.Evaluate(root);
-                Console.WriteLine("\nResult :"+result.ToString("F3"));
+                    string Normalize = Preprocess.Normalize(infix);
+                    List<string> tokenize = Tokenizer.Tokenize(Normalize);
+                    foreach (var x in tokenize) Console.Write(x + " ");
+                    Console.WriteLine();
+                    expression_tree parser = new expression_tree(tokenize);
+                    node root = parser.Parse();
+                    double result = evaluator.Evaluate(root);
+                    Console.WriteLine("\nResult :" + result.ToString("F3"));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("==> "+ex.Message);
+                }
             }
             if (n==2)
             {
@@ -67,14 +75,14 @@ class Program
                 try
                 {
                     Console.WriteLine("Enter the Priority from 1 to 3: ");
-                    Console.Write("Enter the Add_Sub: ");
+                    Console.Write("Enter the Add_Sub: "); //
                     int add_sum = int.Parse(Console.ReadLine());
                     Console.Write("Enter the Mul_Div: ");
-                    int mul_div = int.Parse(Console.ReadLine());
+                    int mul_div = int.Parse(Console.ReadLine()); //
                     Console.Write("Enter the Pow_Rad: ");
-                    int pow_rad = int.Parse(Console.ReadLine());
+                    int pow_rad = int.Parse(Console.ReadLine()); //
                     Console.Write("Enter Input : ");
-                    string? infix = Console.ReadLine();
+                    string? infix = Console.ReadLine(); 
                     string Normalize = Preprocess.Normalize(infix);
                     List<string> tokenize = Tokenizer.Tokenize(Normalize);
                     expression_tree parser = new expression_tree(tokenize);

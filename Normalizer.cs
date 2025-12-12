@@ -42,7 +42,7 @@ public class Preprocess
         for (int i = 0; i < s.Length - 1; i++)
         {
             if (s[i] == '/' && s[i + 1] == '0')
-                throw new Exception($"{s[i]}{s[i + 1]} Invalid Divide.Division by zero. Try Again.");
+                throw new Exception($"Error ==> Division By Zero.");
         }
     }
     private static void invaliddivideandmulti(string s)

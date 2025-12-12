@@ -39,6 +39,7 @@ namespace Expression_Tree
             index++;
             return t;
         }
+
         public void SetDefaultPrecedence()
         {
             precedence = new Dictionary<string, int>
@@ -51,6 +52,7 @@ namespace Expression_Tree
                 { "√", 3 }
             };
         }
+
         public void SetPrecedence(int addSub, int mulDiv, int powRad)
         {
             precedence["+"] = addSub;
@@ -59,13 +61,12 @@ namespace Expression_Tree
             precedence["/"] = mulDiv;
             precedence["^"] = powRad;
             precedence["√"] = powRad;
-             
         }
+
         public node Parse()
         {
             return ParseExpression(0);
         }
-
         private node ParseExpression(int minPrec)
         {
             node left = ParsePrimary();
@@ -78,11 +79,13 @@ namespace Expression_Tree
                     break;
 
                 int prec = precedence[op];
-
                 if (prec < minPrec)
                     break;
                 Next();
-                node right = ParseExpression(prec + 1);
+
+                int nextMinPrec = IsRightAssociative(op) ? prec : prec + 1;
+
+                node right = ParseExpression(nextMinPrec);
 
                 left = new node(op, left, right);
             }
@@ -90,6 +93,10 @@ namespace Expression_Tree
             return left;
         }
 
+        private bool IsRightAssociative(string op)
+        {
+            return op == "^" || op == "√";
+        }
         private node ParsePrimary()
         {
             string tok = Current();
