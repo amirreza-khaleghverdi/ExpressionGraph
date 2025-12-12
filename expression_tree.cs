@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace Expression_Tree
 {
-     
     public class node
     {
         public string Value { get; set; }
@@ -93,7 +92,7 @@ namespace Expression_Tree
 
             return left;
         }
-         
+
         private bool IsRightAssociative(string op)
         {
             return op == "^" || op == "√";

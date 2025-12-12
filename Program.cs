@@ -2,7 +2,6 @@
 using Evaluator;
 using System;
 
-
 class Program
 {
     static void Main(string[] args)
@@ -33,10 +32,10 @@ class Program
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("==> "+ex.Message);
+                    Console.WriteLine("==> " + ex.Message);
                 }
             }
-            if (n==2)
+            if (n == 2)
             {
                 try
                 {
@@ -83,7 +82,7 @@ class Program
                     Console.Write("Enter the Pow_Rad: ");
                     int pow_rad = int.Parse(Console.ReadLine()); //
                     Console.Write("Enter Input : ");
-                    string? infix = Console.ReadLine(); 
+                    string? infix = Console.ReadLine();
                     string Normalize = Preprocess.Normalize(infix);
                     List<string> tokenize = Tokenizer.Tokenize(Normalize);
                     expression_tree parser = new expression_tree(tokenize);
@@ -92,12 +91,11 @@ class Program
                     double result = evaluator.Evaluate(root);
                     Console.WriteLine("Result = " + result);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(" ==> " + ex.Message);
                 }
             }
         }
-
     }
 }

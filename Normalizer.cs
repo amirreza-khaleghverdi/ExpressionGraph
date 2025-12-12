@@ -20,7 +20,7 @@ public class Preprocess
         //invaliddivideandmulti(input);
         //invalidPower_Square(input);
         return input;
-    } 
+    }
     static string RemoveSpaces(string s) => s.Replace(" ", "");
     static void ValidateCharacters(string s)
     {
@@ -61,7 +61,6 @@ public class Preprocess
             }
         }
     }
-     
     private static void invalidPower_Square(string s)
     {
         if (s[0] == '^' || s[s.Length - 1] == '^' || s[s.Length - 1] == '√')
@@ -169,6 +168,5 @@ public class Preprocess
         }
         return x;
     }
-     
 }
-          
+

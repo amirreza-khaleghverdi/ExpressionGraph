@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-
 public class Tokenizer
 {
     public static List<string> Tokenize(string input)
@@ -17,7 +16,7 @@ public class Tokenizer
                 StringBuilder num = new StringBuilder();
                 num.Append(c);
                 i++;
-                bool hasDot = c == '.'; 
+                bool hasDot = c == '.';
                 while (i < input.Length && (char.IsDigit(input[i]) || (!hasDot && input[i] == '.')))
                 {
                     if (input[i] == '.')
@@ -54,7 +53,6 @@ public class Tokenizer
             }
             i++;
         }
-         
         return tokens;
     }
 }
