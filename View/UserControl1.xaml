@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Task Prioritizer" Height="450" Width="400"
+        Background="#F5F7FA">
+
+    <StackPanel>
+        <Label Content="Task Priorities" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+        <ListBox x:Name="TaskListBox" BorderThickness="0" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="White" CornerRadius="10" Margin="0,5" Padding="15" Width="340">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.1"/>
+                        </Border.Effect>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="SemiBold" Foreground="#333"/>
+                                <TextBlock Text="{Binding CurrentPriority}" FontSize="12" Foreground="{Binding PriorityColor}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <Button Content="1" Click="SetHigh" Tag="{Binding}" Margin="2" Width="30" Height="30" Background="#FF3B30" Foreground="White" BorderThickness="0">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                                <Button Content="2" Click="SetMed" Tag="{Binding}" Margin="2" Width="30" Height="30" Background="#FF9500" Foreground="White" BorderThickness="0">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                                <Button Content="3" Click="SetLow" Tag="{Binding}" Margin="2" Width="30" Height="30" Background="#8E8E93" Foreground="White" BorderThickness="0">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>
