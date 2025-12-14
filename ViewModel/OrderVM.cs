@@ -94,7 +94,7 @@ namespace Page_Navigation_App.ViewModel
                 List<string> tokenize = Tokenizer.Tokenize(Normalize);
                 expression_tree tree = new expression_tree(tokenize);
                 node root = tree.Parse();
-                
+                CurrentTree = root;
                 double result = evaluator.Evaluate(root, vars);
                 ResultValue = $"Result: {result}";
             }

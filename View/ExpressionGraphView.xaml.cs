@@ -50,7 +50,7 @@ namespace Page_Navigation_App.View
         {
             TreeCanvas.Children.Clear();
             double startX = TreeCanvas.ActualWidth > 0 ? TreeCanvas.ActualWidth / 2 : 220;
-            DrawNode(root, startX, 20, 80, 80);
+            DrawNode(root, startX, 20, 400, 100);
         }
 
         public void DrawNode(node n, double x, double y, double x_offset, double y_offset)
@@ -59,8 +59,8 @@ namespace Page_Navigation_App.View
 
             Ellipse circle = new Ellipse
             {
-                Width = 35,
-                Height = 35,
+                Width = 25,
+                Height = 25,
                 Fill = Brushes.WhiteSmoke,
                 Stroke = Brushes.Black,
                 StrokeThickness = 2
@@ -74,7 +74,7 @@ namespace Page_Navigation_App.View
             {
                 Text = n.Value,
                 FontWeight = FontWeights.Bold,
-                FontSize = 16
+                FontSize = 13
             };
             Canvas.SetLeft(text, x - 7);
             Canvas.SetTop(text, y - 10);
@@ -94,7 +94,7 @@ namespace Page_Navigation_App.View
                 };
                 TreeCanvas.Children.Add(line);
 
-                DrawNode(n.Left, x - x_offset, y + y_offset, x_offset * 0.7, y_offset);
+                DrawNode(n.Left, x - x_offset, y + y_offset, x_offset * 0.5, y_offset * 0.9);
             }
 
 
@@ -111,7 +111,7 @@ namespace Page_Navigation_App.View
                 };
                 TreeCanvas.Children.Add(line);
 
-                DrawNode(n.Right, x + x_offset, y + y_offset, x_offset * 0.7, y_offset);
+                DrawNode(n.Right, x + x_offset, y + y_offset, x_offset * 0.5, y_offset * 0.9);
             }
         }
 

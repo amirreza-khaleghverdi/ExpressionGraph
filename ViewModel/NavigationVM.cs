@@ -21,13 +21,11 @@ namespace Page_Navigation_App.ViewModel
         public ICommand ProductsCommand { get; set; }
         public ICommand OrdersCommand { get; set; }
         public ICommand TransactionsCommand { get; set; }
-        public ICommand SettingsCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Product(object obj) => CurrentView = new ProductVM();
         private void Order(object obj) => CurrentView = new OrderVM();
         private void Transaction(object obj) => CurrentView = new TransactionVM();
-        private void Setting(object obj) => CurrentView = new SettingVM();
 
         public NavigationVM()
         {
@@ -35,7 +33,6 @@ namespace Page_Navigation_App.ViewModel
             ProductsCommand = new RelayCommand(Product);
             OrdersCommand = new RelayCommand(Order);
             TransactionsCommand = new RelayCommand(Transaction);
-            SettingsCommand = new RelayCommand(Setting);
 
             // Startup Page
             CurrentView = new HomeVM();
