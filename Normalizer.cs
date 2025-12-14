@@ -102,7 +102,7 @@ public class simplification
                 result.Append(s[i]);
             }
         }
-        return result.ToString();
+        return result.ToString(); 
     } 
     private static string Removeafter_div_or_multi(string x)
     {

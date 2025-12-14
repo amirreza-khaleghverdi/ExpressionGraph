@@ -136,7 +136,7 @@ namespace Expression_Tree
                 int prec = precedence[op];
                 if (prec < minPrec)
                     break;
-
+                 
                 Next();
 
                 int nextMin = IsRightAssociative(op) ? prec : prec + 1;
