@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 
 namespace Expression_Tree
 {
@@ -16,7 +15,7 @@ namespace Expression_Tree
             Left = left;
             Right = right;
         }
-     }
+    }
 
     public class expression_tree
     {
@@ -30,8 +29,8 @@ namespace Expression_Tree
             index = 0;
             SetDefaultPrecedence();
         }
-        private string Current() =>
-            index < tokens.Count ? tokens[index] : null;
+
+        private string Current() => index < tokens.Count ? tokens[index] : null;
 
         private string Next()
         {
@@ -47,30 +46,42 @@ namespace Expression_Tree
                 { "-", 1 },
                 { "*", 2 },
                 { "/", 2 },
-                { "^", 1000 },
-                { "√", 1000 }
+                { "^", 3 },
+                { "√", 3 }
             };
         }
-        public void SetPrecedence(int addSub, int mulDiv)
+        public void SetPrecedence(int addSub, int mulDiv, int powRad)
         {
+            if (addSub < 1 || addSub > 3 ||
+                mulDiv < 1 || mulDiv > 3 ||
+                powRad < 1 || powRad > 3)
+                throw new Exception("Precedence values must be between 1 and 3");
+
             precedence["+"] = addSub;
             precedence["-"] = addSub;
             precedence["*"] = mulDiv;
             precedence["/"] = mulDiv;
+            precedence["^"] = powRad;
+            precedence["√"] = powRad;
         }
 
         public node Parse() => ParseExpression(0);
+
         private node ParseUnary()
         {
             string tok = Current();
 
             if (tok == null)
                 throw new Exception("Unexpected end of expression");
+
+            // عملگر منفی یکتا
             if (tok == "-")
             {
                 Next();
                 return new node("u-", ParseUnary());
             }
+
+            // توابع مثل sin, cos, tan, cot, log
             if (tok == "sin" || tok == "cos" || tok == "tan" ||
                 tok == "cot" || tok == "log")
             {
@@ -115,6 +126,7 @@ namespace Expression_Tree
             Next();
             return new node(tok);
         }
+
         private node ParseExpression(int minPrec)
         {
             node left = ParseUnary();
@@ -129,7 +141,7 @@ namespace Expression_Tree
                 if (prec < minPrec)
                     break;
 
-                Next(); 
+                Next();
 
                 int nextMin = IsRightAssociative(op) ? prec : prec + 1;
 
@@ -137,9 +149,9 @@ namespace Expression_Tree
 
                 left = new node(op, left, right);
             }
-
             return left;
         }
+
         private bool IsRightAssociative(string op)
         {
             return op == "^" || op == "√";

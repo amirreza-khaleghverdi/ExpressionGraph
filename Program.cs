@@ -1,7 +1,8 @@
 ﻿using Expression_Tree;
 using Evaluator;
 using System;
-
+using System.Collections.Generic;
+using System.Threading;
 class Program
 {
     static void Main(string[] args)
@@ -77,17 +78,19 @@ class Program
                 {
                     try
                     {
-                        Console.WriteLine("Enter the Priority from 1 to 2:  2=MAX_Priority ...");
+                        Console.WriteLine("Enter the Priority from 1 to 3:  3=MAX_Priority ...");
                         Console.Write("Enter the Add_Sub: "); //
                         int add_sum = int.Parse(Console.ReadLine());
                         Console.Write("Enter the Mul_Div: ");
                         int mul_div = int.Parse(Console.ReadLine()); //
+                        Console.Write("Enter the Pow_Rad: ");
+                        int pow_rad = int.Parse(Console.ReadLine()); //
                         Console.Write("Enter Input : ");
                         string? infix = Console.ReadLine();
                         string Normalize = simplification.Normalize(infix);
                         List<string> tokenize = Tokenizer.Tokenize(Normalize);
                         expression_tree parser = new expression_tree(tokenize);
-                        parser.SetPrecedence(add_sum, mul_div);
+                        parser.SetPrecedence(add_sum, mul_div,pow_rad);
                         node root = parser.Parse();
                         double result = evaluator.Evaluate(root);
                         Console.WriteLine("Result = " + result);

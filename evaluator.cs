@@ -24,7 +24,7 @@ public static class evaluator
 
             var variable = vars.FirstOrDefault(v => v.Item1 == root.Value);
 
-            return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir nam
+            return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir name
         }
         if (root.Value == "u-")
             return -EvaluatePostfix(root.Left, vars);
