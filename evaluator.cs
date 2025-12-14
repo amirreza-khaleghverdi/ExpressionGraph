@@ -83,7 +83,7 @@ public static class evaluator
                 throw new DivideByZeroException("Error ==> Division By Zero!");
             return left / right;
         }
-        if (root.Value == "√")
+        if (root.Value == "√") 
         {
             if (right<0)
             {

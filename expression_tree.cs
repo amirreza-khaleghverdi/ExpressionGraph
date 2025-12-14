@@ -73,15 +73,11 @@ namespace Expression_Tree
 
             if (tok == null)
                 throw new Exception("Unexpected end of expression");
-
-            // عملگر منفی یکتا
             if (tok == "-")
             {
                 Next();
                 return new node("u-", ParseUnary());
             }
-
-            // توابع مثل sin, cos, tan, cot, log
             if (tok == "sin" || tok == "cos" || tok == "tan" ||
                 tok == "cot" || tok == "log")
             {
