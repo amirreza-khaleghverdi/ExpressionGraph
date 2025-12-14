@@ -17,25 +17,20 @@ public class Tokenizer
                 StringBuilder num = new StringBuilder();
                 num.Append(c);
                 i++;
-
                 bool hasDot = c == '.';
-
-                while (i < input.Length &&
-                      (char.IsDigit(input[i]) || (!hasDot && input[i] == '.')))
+                while (i < input.Length && (char.IsDigit(input[i]) || (!hasDot && input[i] == '.')))
                 {
                     if (input[i] == '.') hasDot = true;
                     num.Append(input[i]);
                     i++;
                 }
-
                 tokens.Add(num.ToString());
                 continue;
             }
-            if (char.IsLetter(c)||c=='_')
-            {
-                StringBuilder text = new StringBuilder();
-
-                while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '_'))
+             if (char.IsLetter(c)||c=='_') //variable cant start with number 
+             {
+                StringBuilder text = new StringBuilder(); 
+                while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '_')) 
                 {
                     text.Append(input[i]);
                     i++;
@@ -54,16 +49,14 @@ public class Tokenizer
                 case '(': tokens.Add("("); break;
                 case ')': tokens.Add(")"); break;
                 case ',': tokens.Add(","); break;
-
                 default:
                     throw new Exception($"Wrong character: {c}");
             }
-
             i++;
         } 
         return tokens;
     } 
-    private static string Preprocess(string input)
+    private static string Preprocess(string input) //patterns 
     { 
         input = Regex.Replace(
             input,

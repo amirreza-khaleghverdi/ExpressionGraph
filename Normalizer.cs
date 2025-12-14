@@ -9,14 +9,14 @@ public class simplification
     {
         if (string.IsNullOrWhiteSpace(input))
             return "";
-        input = RemoveSpaces(input);
-        ValidateCharacters(input);
+        input = RemoveSpaces(input); 
+        ValidateCharacters(input); // valid char
         input = fix_number_startwithzero(input);
-        input = simplesigns(input);
-        input = FixLeadingSigns(input);
+        input = simplesigns(input);  // simle minus
+        input = FixLeadingSigns(input); // final simle signs 
         input = RemoveUnaryPlusInsideParentheses(input);
-        input = Removeafter_div_or_multi(input);
-        invaliddivide(input);
+        input = Removeafter_div_or_multi(input); 
+        invaliddivide(input); //division by zero 
         return input;
     }
     static string RemoveSpaces(string s) => s.Replace(" ", "");

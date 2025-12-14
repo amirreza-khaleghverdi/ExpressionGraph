@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 namespace Expression_Tree
 {
     public class node
@@ -16,20 +15,17 @@ namespace Expression_Tree
             Right = right;
         }
     }
-
     public class expression_tree
     {
         private readonly List<string> tokens;
         private int index;
         private Dictionary<string, int> precedence;
-
         public expression_tree(List<string> tokens)
         {
             this.tokens = tokens;
             index = 0;
             SetDefaultPrecedence();
         }
-
         private string Current() => index < tokens.Count ? tokens[index] : null;
 
         private string Next()
@@ -135,10 +131,8 @@ namespace Expression_Tree
 
                 int prec = precedence[op];
                 if (prec < minPrec)
-                    break;
-                 
+                    break;        
                 Next();
-
                 int nextMin = IsRightAssociative(op) ? prec : prec + 1;
 
                 node right = ParseExpression(nextMin);
@@ -147,7 +141,6 @@ namespace Expression_Tree
             }
             return left;
         }
-
         private bool IsRightAssociative(string op)
         {
             return op == "^" || op == "√";

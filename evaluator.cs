@@ -26,15 +26,13 @@ public static class evaluator
 
             return variable != null ? variable.Item2 : 0; //value of type of nonename va taghir name
         }
-        if (root.Value == "u-")
+        if (root.Value == "u-") //unary minus
             return -EvaluatePostfix(root.Left, vars);
         if (root.Value == "sin" || root.Value == "cos" ||
             root.Value == "tan" || root.Value == "cot")
         {
             double arg = EvaluatePostfix(root.Left, vars);
             arg = (arg / 180.0) * Math.PI;
-
-
             double val = root.Value switch
             {
                 "sin" => Math.Round(Math.Sin(arg), 10),
