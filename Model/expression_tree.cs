@@ -19,7 +19,7 @@ namespace Page_Navigation_App.Model
 
     public class expression_tree
     {
-        private List<string> tokens;
+        private readonly List<string> tokens;
         private int index;
         private Dictionary<string, int> precedence;
 
@@ -30,8 +30,7 @@ namespace Page_Navigation_App.Model
             SetDefaultPrecedence();
         }
 
-        private string? Current() =>
-            index < tokens.Count ? tokens[index] : null;
+        private string Current() => index < tokens.Count ? tokens[index] : null;
 
         private string Next()
         {
@@ -53,6 +52,11 @@ namespace Page_Navigation_App.Model
         }
         public void SetPrecedence(int addSub, int mulDiv, int powRad)
         {
+            if (addSub < 1 || addSub > 3 ||
+                mulDiv < 1 || mulDiv > 3 ||
+                powRad < 1 || powRad > 3)
+                throw new Exception("Precedence values must be between 1 and 3");
+
             precedence["+"] = addSub;
             precedence["-"] = addSub;
             precedence["*"] = mulDiv;
@@ -60,57 +64,52 @@ namespace Page_Navigation_App.Model
             precedence["^"] = powRad;
             precedence["√"] = powRad;
         }
-        public node Parse()
-        {
-            return ParseExpression(0);
-        }
 
-        private node ParseExpression(int minPrec)
-        {
-            node left = ParsePrimary();
+        public node Parse() => ParseExpression(0);
 
-            while (true)
-            {
-                string op = Current();
-
-                if (op == null || !precedence.ContainsKey(op))
-                    break;
-
-                int prec = precedence[op];
-
-                if (prec < minPrec)
-                    break;
-                Next();
-                node right = ParseExpression(prec + 1);
-
-                left = new node(op, left, right);
-            }
-
-            return left;
-        }
-
-        private node ParsePrimary()
+        private node ParseUnary()
         {
             string tok = Current();
+
             if (tok == null)
                 throw new Exception("Unexpected end of expression");
-            if (tok == "sin" || tok == "cos" || tok == "tan" || tok == "cot")
-            {
-                Next();
-                if (Current() != "(") throw new Exception("Expected '('");
-                Next();
-
-                node arg = ParseExpression(0);
-
-                if (Current() != ")") throw new Exception("Expected ')'");
-                Next();
-
-                return new node(tok, arg);
-            }
             if (tok == "-")
             {
                 Next();
-                return new node("u-", ParsePrimary());
+                return new node("u-", ParseUnary());
+            }
+            if (tok == "sin" || tok == "cos" || tok == "tan" ||
+                tok == "cot" || tok == "log")
+            {
+                string funcName = tok;
+                Next();
+
+                if (Current() != "(") throw new Exception("Expected '(' after " + funcName);
+                Next();
+
+                if (funcName == "log")
+                {
+                    node valueNode = ParseExpression(0);
+                    if (Current() == ",")
+                    {
+                        Next();
+                        node baseNode = ParseExpression(0);
+                        if (Current() != ")") throw new Exception("Expected ')'");
+                        Next();
+                        return new node("log", baseNode, valueNode);
+                    }
+                    else
+                    {
+                        if (Current() != ")") throw new Exception("Expected ')'");
+                        Next();
+                        return new node("log", new node("10"), valueNode);
+                    }
+                }
+
+                node arg = ParseExpression(0);
+                if (Current() != ")") throw new Exception("Expected ')'");
+                Next();
+                return new node(funcName, arg);
             }
             if (tok == "(")
             {
@@ -122,6 +121,36 @@ namespace Page_Navigation_App.Model
             }
             Next();
             return new node(tok);
+        }
+
+        private node ParseExpression(int minPrec)
+        {
+            node left = ParseUnary();
+
+            while (true)
+            {
+                string op = Current();
+                if (op == null || !precedence.ContainsKey(op))
+                    break;
+
+                int prec = precedence[op];
+                if (prec < minPrec)
+                    break;
+
+                Next();
+
+                int nextMin = IsRightAssociative(op) ? prec : prec + 1;
+
+                node right = ParseExpression(nextMin);
+
+                left = new node(op, left, right);
+            }
+            return left;
+        }
+
+        private bool IsRightAssociative(string op)
+        {
+            return op == "^" || op == "√";
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Page_Navigation_App.View;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,14 @@ namespace Page_Navigation_App.View
     /// </summary>
     public partial class Transactions : UserControl
     {
+
         public Transactions()
         {
             InitializeComponent();
         }
     }
 }
+
+
+
+

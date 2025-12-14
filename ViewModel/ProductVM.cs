@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Page_Navigation_App.Model;
 using Page_Navigation_App.Utilities;
@@ -44,15 +45,23 @@ namespace Page_Navigation_App.ViewModel
         // Inside your Calculate method:
         public void Calculate(string input)
         {
-            string normalized_input =Preprocess.Normalize(input);
-            List<string> tokenized_input = Tokenizer.Tokenize(normalized_input);
+            try
+            {
+                string normalized_input =Preprocess.Normalize(input);
+                List<string> tokenized_input = Tokenizer.Tokenize(normalized_input);
 
-            expression_tree expression_tree = new expression_tree(tokenized_input);
-            node root = expression_tree.Parse();
-            CurrentTree = root;
+                expression_tree expression_tree = new expression_tree(tokenized_input);
+                node root = expression_tree.Parse();
+                CurrentTree = root;
 
-            double result = evaluator.Evaluate(root);
-            ResultValue = $"Result: {result}";
+                double result = evaluator.Evaluate(root);
+                ResultValue = $"Result: {result}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
