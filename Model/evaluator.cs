@@ -26,6 +26,7 @@ namespace Page_Navigation_App.Model
             }
             if (root.Value == "u-")
                 return -EvaluatePostfix(root.Left, vars);
+                
             if (root.Value == "sin" || root.Value == "cos" ||
                 root.Value == "tan" || root.Value == "cot")
             {

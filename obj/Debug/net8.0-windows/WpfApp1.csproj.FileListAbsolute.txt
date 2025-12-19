@@ -39,3 +39,45 @@ E:\dsa proj\wpf app\WpfApp1\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
 E:\dsa proj\wpf app\WpfApp1\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
 E:\dsa proj\wpf app\WpfApp1\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
 E:\dsa proj\wpf app\WpfApp1\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\WpfApp1.exe
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\C418-Aria-Math-192.mp3
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\WpfApp1.deps.json
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\WpfApp1.runtimeconfig.json
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\WpfApp1.dll
+E:\dsa proj\IUST-DSA-Phase1\bin\Debug\net8.0-windows\WpfApp1.pdb
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\Styles\Button.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\Styles\Image.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\Styles\Page.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\Styles\Text.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\ExpressionGraphView.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\UserControl1.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\ExpressionGraphView.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Home.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Orders.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Products.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Transactions.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\UserControl1.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\App.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1_Content.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.lref
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\App.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\MainWindow.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\Utilities\DataTemplate.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Home.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Orders.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Products.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\View\Transactions.baml
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.g.resources
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfoInputs.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfo.cs
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.dll
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.pdb
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
