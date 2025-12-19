@@ -12,7 +12,7 @@ namespace Page_Navigation_App.ViewModel
 {
     class ProductVM : Utilities.ViewModelBase
     {
-
+        
         private string _inputExpression;
         public string InputExpression
         {
@@ -38,11 +38,9 @@ namespace Page_Navigation_App.ViewModel
 
         public ProductVM()
         {
-            // Initialize the command
             CalculateCommand = new RelayCommand(o => Calculate(InputExpression));
         }
 
-        // Inside your Calculate method:
         public void Calculate(string input)
         {
             try

@@ -19,8 +19,4 @@
         <view:Transactions />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:SettingVM}">
-        <view:Settings />
-    </DataTemplate>
-    
 </ResourceDictionary>

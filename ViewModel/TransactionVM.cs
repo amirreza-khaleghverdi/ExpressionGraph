@@ -37,7 +37,6 @@ namespace Page_Navigation_App.ViewModel
         }
 
         public ICommand CalculateCommand { get; }
-
         public ICommand SetPriorityCommand { get; }
         public ObservableCollection<WpfTask> Tasks { get; set; }
 
@@ -79,7 +78,6 @@ namespace Page_Navigation_App.ViewModel
 
 
 
-        // Inside your Calculate method:
         public void Calculate(string input)
         {
             try

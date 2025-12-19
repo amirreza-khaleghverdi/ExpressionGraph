@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="C418-Aria-Math-192.mp3" />
     <None Remove="Images\customer_page.png" />
     <None Remove="Images\home_page.png" />
     <None Remove="Images\img_customer.png" />
@@ -25,6 +26,12 @@
     <None Remove="Images\shutdown_def.png" />
     <None Remove="Images\shutdown_mo.png" />
     <None Remove="Images\transaction_page.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="C418-Aria-Math-192.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

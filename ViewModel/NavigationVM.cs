@@ -34,7 +34,7 @@ namespace Page_Navigation_App.ViewModel
             OrdersCommand = new RelayCommand(Order);
             TransactionsCommand = new RelayCommand(Transaction);
 
-            // Startup Page
+            
             CurrentView = new HomeVM();
         }
 

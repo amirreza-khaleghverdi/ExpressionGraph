@@ -57,7 +57,6 @@ namespace Page_Navigation_App.ViewModel
             CalculateCommand = new RelayCommand(o => Calculate(InputExpression));
         }
 
-        // Inside your Calculate method:
         public void Calculate(string input)
         {
             try

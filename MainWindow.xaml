@@ -1,8 +1,8 @@
-﻿<!--/// <Summary>
+﻿<!-- /// <Summary>
     /// Author : R. Arun Mutharasu
     /// Created :25-08-2022
     /// YouTube Channel : C# Design Pro 
-    /// </Summary>-->
+    /// </Summary> -->
 
 <Window x:Class="Page_Navigation_App.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -18,7 +18,9 @@
         AllowsTransparency="True"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         Background="Transparent">
+    
 
     <Window.DataContext>
         <vm:NavigationVM />
