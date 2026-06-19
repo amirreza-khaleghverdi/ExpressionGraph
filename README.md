@@ -1,4 +1,4 @@
-# 📐 GraphCalc Pro
+# 📐 Expression Graph Calculator
 
 > A next-gen WPF calculator that visualizes mathematical expressions as dynamic graphs — with full MVVM architecture and customizable operator priorities.
 
@@ -77,6 +77,19 @@ Use the **Priority Editor** to define your own operator precedence rules dynamic
 │                     Model                          │
 │      (Expression Evaluator + Graph Engine)         │
 └─────────────────────────────────────────────────────┘
+
+```
+
+## Data Structures Concepts
+
+This project applies several core DSA concepts:
+
+- Expression Trees
+- Graph Traversal
+- Parsing Algorithms
+- Priority Management
+- Tree-Based Expression Evaluation
+
 ```
 
 ### Components
@@ -99,7 +112,6 @@ Use the **Priority Editor** to define your own operator precedence rules dynamic
 | Graph Rendering | Custom Canvas / LiveCharts |
 | Audio | MediaPlayer / NAudio |
 | Dependency Injection | Microsoft.Extensions.DependencyInjection |
-| Testing | xUnit / NUnit |
 
 ---
 
@@ -195,7 +207,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📄 License
 
-[MIT](LICENSE) © [Your Name]
+[MIT](LICENSE) © [Amirreza Khaleghverdi]
 
 ---
 
@@ -203,7 +215,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 [Your Name] - [your.email@example.com](mailto:your.email@example.com)
 
-Project Link: [https://github.com/YOUR-USERNAME/YOUR-REPO-NAME](https://github.com/YOUR-USERNAME/YOUR-REPO-NAME)
+Project Link: [https://github.com/amirreza-khaleghverdi/ExpressionGraph](https://github.com/amirreza-khaleghverdi/ExpressionGraph)
 
 ---
 
