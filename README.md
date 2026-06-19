@@ -90,7 +90,6 @@ This project applies several core DSA concepts:
 - Priority Management
 - Tree-Based Expression Evaluation
 
-```
 
 ### Components
 
@@ -127,10 +126,10 @@ This project applies several core DSA concepts:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/amirreza-khaleghverdi/ExpressionGraph.git
 
 # Navigate to the project folder
-cd YOUR-REPO-NAME
+cd ExpressionGraph
 
 # Build the project
 dotnet build
