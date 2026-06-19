@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\dsa proj\wpf app\WpfApp1\WpfApp1\obj\Debug\net8.0-windows\
+E:\dsa proj\IUST-DSA-Phase1\obj\Debug\net8.0-windows\
 WpfApp1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-E:\dsa proj\wpf app\WpfApp1\WpfApp1\App.xaml
-12-1406557021
+E:\dsa proj\IUST-DSA-Phase1\App.xaml
+121202930314
 1-2109865424
-2618046869
+251958632581
 1981839832580
-MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\ExpressionGraphView.xaml;View\Home.xaml;View\Orders.xaml;View\Products.xaml;View\Transactions.xaml;View\UserControl1.xaml;
+MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\ExpressionGraphView.xaml;View\Home.xaml;View\Orders.xaml;View\Product.xaml;View\Transactions.xaml;View\UserControl1.xaml;
 
 False
 

@@ -1,0 +1,273 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\dsa proj\\IUST-DSA-Phase1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\view\\orders.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:view\\orders.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\utilities\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:utilities\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\utilities\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:utilities\\viewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\view\\expressiongraphview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:view\\expressiongraphview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\view\\expressiongraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:view\\expressiongraphview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\model\\expression_tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:model\\expression_tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\model\\evaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:model\\evaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\model\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:model\\tokenizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\model\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:model\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\viewmodel\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:viewmodel\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\viewmodel\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:viewmodel\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\viewmodel\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:viewmodel\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\viewmodel\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:viewmodel\\navigationvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\view\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:view\\product.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|e:\\dsa proj\\iust-dsa-phase1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5335863B-7C65-4E42-9DB9-321F0321CACC}|WpfApp1.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 16,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Utilities\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "Utilities\\RelayCommand.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Utilities\\RelayCommand.cs",
+              "RelativeToolTip": "Utilities\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:54:17.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ViewModelBase.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Utilities\\ViewModelBase.cs",
+              "RelativeDocumentMoniker": "Utilities\\ViewModelBase.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Utilities\\ViewModelBase.cs",
+              "RelativeToolTip": "Utilities\\ViewModelBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:54:12.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tokenizer.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\Tokenizer.cs",
+              "RelativeDocumentMoniker": "Model\\Tokenizer.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\Tokenizer.cs",
+              "RelativeToolTip": "Model\\Tokenizer.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:49:43.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "taskmodel.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\taskmodel.cs",
+              "RelativeDocumentMoniker": "Model\\taskmodel.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\taskmodel.cs",
+              "RelativeToolTip": "Model\\taskmodel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:46:47.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "expression_tree.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\expression_tree.cs",
+              "RelativeDocumentMoniker": "Model\\expression_tree.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\expression_tree.cs",
+              "RelativeToolTip": "Model\\expression_tree.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAAAJsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:46:39.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "evaluator.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\evaluator.cs",
+              "RelativeDocumentMoniker": "Model\\evaluator.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\Model\\evaluator.cs",
+              "RelativeToolTip": "Model\\evaluator.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T08:46:35.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExpressionGraphView.xaml",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\ExpressionGraphView.xaml",
+              "RelativeDocumentMoniker": "View\\ExpressionGraphView.xaml",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\ExpressionGraphView.xaml",
+              "RelativeToolTip": "View\\ExpressionGraphView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-23T05:43:01.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExpressionGraphView.xaml.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\ExpressionGraphView.xaml.cs",
+              "RelativeDocumentMoniker": "View\\ExpressionGraphView.xaml.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\ExpressionGraphView.xaml.cs",
+              "RelativeToolTip": "View\\ExpressionGraphView.xaml.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowDMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T05:42:47.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductVM.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\ProductVM.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ProductVM.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\ProductVM.cs",
+              "RelativeToolTip": "ViewModel\\ProductVM.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T05:39:34.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderVM.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\OrderVM.cs",
+              "RelativeDocumentMoniker": "ViewModel\\OrderVM.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\OrderVM.cs",
+              "RelativeToolTip": "ViewModel\\OrderVM.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T05:40:26.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeVM.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\HomeVM.cs",
+              "RelativeDocumentMoniker": "ViewModel\\HomeVM.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\HomeVM.cs",
+              "RelativeToolTip": "ViewModel\\HomeVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T05:40:24.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NavigationVM.cs",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\NavigationVM.cs",
+              "RelativeDocumentMoniker": "ViewModel\\NavigationVM.cs",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\ViewModel\\NavigationVM.cs",
+              "RelativeToolTip": "ViewModel\\NavigationVM.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T05:31:00.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-23T05:28:53.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Product.xaml",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\Product.xaml",
+              "RelativeDocumentMoniker": "View\\Product.xaml",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\Product.xaml",
+              "RelativeToolTip": "View\\Product.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-23T05:06:33.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Orders.xaml",
+              "DocumentMoniker": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\Orders.xaml",
+              "RelativeDocumentMoniker": "View\\Orders.xaml",
+              "ToolTip": "E:\\dsa proj\\IUST-DSA-Phase1\\View\\Orders.xaml",
+              "RelativeToolTip": "View\\Orders.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-22T07:45:59.354Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

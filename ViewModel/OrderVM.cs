@@ -53,7 +53,6 @@ namespace Page_Navigation_App.ViewModel
 
         public OrderVM()
         {
-            // Initialize the command
             CalculateCommand = new RelayCommand(o => Calculate(InputExpression));
         }
 

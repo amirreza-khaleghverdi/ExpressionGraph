@@ -6,6 +6,7 @@ namespace Page_Navigation_App.Model
         {
             return Evaluate(root, new List<Tuple<string, double>>());
         }
+
         public static double Evaluate(node root, List<Tuple<string, double>> vars)
         {
             if (root == null)
@@ -13,6 +14,7 @@ namespace Page_Navigation_App.Model
 
             return EvaluatePostfix(root, vars);
         }
+        
         private static double EvaluatePostfix(node root, List<Tuple<string, double>> vars)
         {
             if (root.Left == null && root.Right == null)
@@ -26,7 +28,7 @@ namespace Page_Navigation_App.Model
             }
             if (root.Value == "u-")
                 return -EvaluatePostfix(root.Left, vars);
-                
+
             if (root.Value == "sin" || root.Value == "cos" ||
                 root.Value == "tan" || root.Value == "cot")
             {
@@ -74,8 +76,10 @@ namespace Page_Navigation_App.Model
                 }
                 return Math.Log(INN) / Math.Log(Base);
             }
+
             double left = EvaluatePostfix(root.Left, vars);
             double right = EvaluatePostfix(root.Right, vars);
+            
             if (root.Value == "/")
             {
                 if (Math.Abs(right) < 1e-10)
