@@ -199,15 +199,6 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 
-## 🙏 Acknowledgments
-
-- C418 for the masterpiece *Aria Math*
-- My DSA professor for pushing us to think in graphs
-- The WPF community for endless Stack Overflow wisdom
-- Everyone who contributed to this project
-
----
-
 ## 📬 Contact
 
 [Your Name] - [your.email@example.com](mailto:your.email@example.com)
