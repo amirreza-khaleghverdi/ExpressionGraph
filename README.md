@@ -192,7 +192,7 @@ Or open the solution file in Visual Studio and press **F5**.
 
 ### Variable Editor
 
-![Variable Editor](screenshots/variable-editor.png)
+![Variable Editor](screenshots/variable-graph.png)
 
 ---
 
