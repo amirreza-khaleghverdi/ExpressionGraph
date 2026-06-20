@@ -29,9 +29,17 @@
 
 ## 🎯 Overview
 
-**Expression Graph Calculator** is more than a traditional calculator. It evaluates mathematical expressions while simultaneously visualizing the computation process as a graph structure. Built with **WPF** and **MVVM architecture**, it demonstrates how data structures and graph-based algorithms can be applied to real-world software applications.
+**Expression Graph Calculator** evaluates mathematical expressions while simultaneously visualizing the computation process as a graph structure.
 
-This project was developed as part of a **Data Structures and Algorithms** course and focuses on expression parsing, operator precedence management, graph generation, and interactive visualization.
+Built with **WPF** and **MVVM architecture**, it demonstrates how data structures and graph-based algorithms can be applied to real-world software applications.
+
+This project was developed as part of a **Data Structures and Algorithms** course and focuses on:
+
+* Expression parsing
+* Operator precedence management
+* Expression tree generation
+* Graph visualization
+* Interactive evaluation
 
 ---
 
@@ -70,19 +78,26 @@ Users can dynamically change operator precedence rules and instantly observe how
 ## 🧠 Architecture
 
 ```text
-┌─────────────────────────────────────────────────────┐
-│                       View                          │
-│              (XAML + Data Binding)                  │
-├─────────────────────────────────────────────────────┤
-│                    ViewModel                        │
-│           (Commands, State, Logic)                  │
-├─────────────────────────────────────────────────────┤
-│                     Model                           │
-│      (Expression Evaluator + Graph Engine)          │
-└─────────────────────────────────────────────────────┘
+┌──────────────────────────┐
+│          View            │
+│   XAML + Data Binding    │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│       ViewModel          │
+│ Commands, State, Logic   │
+└────────────┬─────────────┘
+             │
+             ▼
+┌──────────────────────────┐
+│          Model           │
+│ Expression Evaluator     │
+│ + Graph Engine           │
+└──────────────────────────┘
 ```
 
-## 📚 Data Structures Concepts
+### 📚 Data Structures Concepts
 
 This project applies several core DSA concepts:
 
@@ -135,7 +150,7 @@ dotnet build
 dotnet run
 ```
 
-Alternatively, open the solution file in Visual Studio and press **F5**.
+Or open the solution file in Visual Studio and press **F5**.
 
 ---
 
@@ -155,9 +170,9 @@ Alternatively, open the solution file in Visual Studio and press **F5**.
 
 4. Modify operator priorities using the Priority Editor
 
-5. Recalculate and compare the results
+5. Recalculate and compare results
 
-6. Enjoy optional background music while exploring expressions
+6. Enjoy optional background music
 
 ---
 
@@ -193,7 +208,6 @@ Included as part of the application's user experience and used for educational p
 
 * [ ] Save graphs as PNG/SVG
 * [ ] Export calculations as CSV
-* [ ] Support mathematical functions (`sin`, `cos`, `log`, `sqrt`)
 * [ ] Light theme support
 * [ ] Additional unit tests
 * [ ] Keyboard shortcuts
@@ -220,9 +234,7 @@ MIT License © Amirreza Khaleghverdi
 
 ---
 
-## 🔗 Project Repository
-
-Repository:
+## 🔗 Repository
 
 https://github.com/amirreza-khaleghverdi/ExpressionGraph
 
