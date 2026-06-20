@@ -50,7 +50,7 @@ namespace Page_Navigation_App.View
         {
             TreeCanvas.Children.Clear();
             double startX = TreeCanvas.ActualWidth > 0 ? TreeCanvas.ActualWidth / 2 : 220;
-            DrawNode(root, startX, 20, 400, 100);
+            DrawNode(root, startX, 20, 200, 100);
         }
 
         public void DrawNode(node n, double x, double y, double x_offset, double y_offset)
