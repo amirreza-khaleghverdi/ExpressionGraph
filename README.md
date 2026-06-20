@@ -1,36 +1,37 @@
-# 📐 GraphCalc Pro
+# 📐 Expression Graph Calculator
 
-> A next-gen WPF calculator that visualizes mathematical expressions as dynamic graphs — with full MVVM architecture and customizable operator priorities.
+> A modern WPF calculator that visualizes mathematical expressions as dynamic graphs, built with MVVM architecture and customizable operator priorities.
 
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![WPF](https://img.shields.io/badge/WPF-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
-![MVVM](https://img.shields.io/badge/MVVM-FF6F00?style=for-the-badge&logo=github&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+[![Download](https://img.shields.io/badge/Download-Latest%20Release-brightgreen?style=for-the-badge)](../../releases/latest)
+
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge\&logo=c-sharp\&logoColor=white)
+![WPF](https://img.shields.io/badge/WPF-5C2D91?style=for-the-badge\&logo=.net\&logoColor=white)
+![MVVM](https://img.shields.io/badge/MVVM-FF6F00?style=for-the-badge\&logo=github\&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge\&logo=dotnet\&logoColor=white)
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [How to Use](#-how-to-use)
-- [Screenshots](#-screenshots)
-- [Music Credit](#-music-credit)
-- [Future Improvements](#-future-improvements)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
+* [Overview](#-overview)
+* [Features](#-features)
+* [Architecture](#-architecture)
+* [Tech Stack](#-tech-stack)
+* [Getting Started](#-getting-started)
+* [How to Use](#-how-to-use)
+* [Screenshots](#-screenshots)
+* [Music Credit](#-music-credit)
+* [Future Improvements](#-future-improvements)
+* [Contributing](#-contributing)
+* [License](#-license)
 
 ---
 
 ## 🎯 Overview
 
-**GraphCalc Pro** is not your average calculator. It evaluates mathematical expressions while simultaneously **rendering the computation flow as an interactive graph**. Built with **WPF** and **MVVM** architecture, it combines functionality with stunning visuals — all backed by the calming vibes of *Aria Math* for the perfect coding experience.
+**Expression Graph Calculator** is more than a traditional calculator. It evaluates mathematical expressions while simultaneously visualizing the computation process as a graph structure. Built with **WPF** and **MVVM architecture**, it demonstrates how data structures and graph-based algorithms can be applied to real-world software applications.
 
-This project was developed as part of my **Data Structures and Algorithms** course, showcasing how graph theory can be applied to real-world applications like expression evaluation.
+This project was developed as part of a **Data Structures and Algorithms** course and focuses on expression parsing, operator precedence management, graph generation, and interactive visualization.
 
 ---
 
@@ -38,68 +39,79 @@ This project was developed as part of my **Data Structures and Algorithms** cour
 
 ### 🧮 Smart Calculation Engine
 
-- Supports **basic arithmetic**: `+`, `-`, `*`, `/`, `^`
-- Customizable **operator priority**: Change precedence of `*`, `+`, `^`, etc. on the fly
-- Handles **parentheses** and complex nested expressions
-- Error handling for invalid inputs
+* Supports arithmetic operators: `+`, `-`, `*`, `/`, `^`
+* Customizable operator precedence
+* Parentheses and nested expression support
+* Expression parsing and evaluation
+* Input validation and error handling
 
 ### 📊 Graph Visualization
 
-- Visualizes the **calculation tree** as an interactive graph
-- Each node represents an operation or value
-- Edges show data flow and evaluation order
-- Zoomable, draggable, and beautifully styled with smooth animations
+* Visualizes expressions as graph/tree structures
+* Nodes represent values and operations
+* Edges represent relationships and evaluation flow
+* Interactive graph display
+* Clear visualization of expression evaluation
 
 ### 🎨 UI / UX
 
-- **MVVM architecture**: Clean, testable, maintainable code
-- **Modern WPF design** with smooth animations and transitions
-- **Dark theme** optimized for focus and long coding sessions
-- Built-in **Aria Math** background music (toggle on/off)
+* Built using the **MVVM architectural pattern**
+* Modern WPF interface
+* Dark theme design
+* Smooth transitions and animations
+* Optional background music support
 
 ### ⚙️ Customizable Priorities
 
-Ever wanted `+` to have higher priority than `*`? Now you can!  
-Use the **Priority Editor** to define your own operator precedence rules dynamically.
+Users can dynamically change operator precedence rules and instantly observe how the resulting expression graph and final calculation are affected.
 
 ---
 
 ## 🧠 Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │                       View                          │
 │              (XAML + Data Binding)                  │
 ├─────────────────────────────────────────────────────┤
 │                    ViewModel                        │
-│           (Commands, State, Logic)                 │
+│           (Commands, State, Logic)                  │
 ├─────────────────────────────────────────────────────┤
-│                     Model                          │
-│      (Expression Evaluator + Graph Engine)         │
+│                     Model                           │
+│      (Expression Evaluator + Graph Engine)          │
 └─────────────────────────────────────────────────────┘
 ```
 
+## 📚 Data Structures Concepts
+
+This project applies several core DSA concepts:
+
+* Expression Trees
+* Graph Traversal
+* Parsing Algorithms
+* Priority Management
+* Tree-Based Expression Evaluation
+
 ### Components
 
-| Layer | Responsibility |
-|-------|----------------|
-| **Model** | Expression parser, operator priority system, graph generation algorithm |
-| **ViewModel** | Mediates between UI and Model using `INotifyPropertyChanged` & `ICommand` |
-| **View** | Fully data-bound XAML with animations and custom controls |
+| Layer         | Responsibility                                                               |
+| ------------- | ---------------------------------------------------------------------------- |
+| **Model**     | Expression parser, operator priority system, graph generation algorithm      |
+| **ViewModel** | Connects UI and business logic using `INotifyPropertyChanged` and `ICommand` |
+| **View**      | XAML-based user interface with data binding and animations                   |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Component | Technology |
-|-----------|------------|
-| UI Framework | WPF (.NET) |
-| Architecture | MVVM |
-| Language | C# |
-| Graph Rendering | Custom Canvas / LiveCharts |
-| Audio | MediaPlayer / NAudio |
+| Component            | Technology                               |
+| -------------------- | ---------------------------------------- |
+| UI Framework         | WPF (.NET)                               |
+| Architecture         | MVVM                                     |
+| Language             | C#                                       |
+| Graph Rendering      | Custom Canvas / LiveCharts               |
+| Audio                | MediaPlayer / NAudio                     |
 | Dependency Injection | Microsoft.Extensions.DependencyInjection |
-| Testing | xUnit / NUnit |
 
 ---
 
@@ -107,113 +119,109 @@ Use the **Priority Editor** to define your own operator precedence rules dynamic
 
 ### Prerequisites
 
-- Windows 10/11
-- [.NET 6.0+](https://dotnet.microsoft.com/download) or .NET Framework 4.7.2+
-- Visual Studio 2022+ (recommended)
+* Windows 10/11
+* .NET 6.0+ or .NET Framework 4.7.2+
+* Visual Studio 2022 or later
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+git clone https://github.com/amirreza-khaleghverdi/ExpressionGraph.git
 
-# Navigate to the project folder
-cd YOUR-REPO-NAME
+cd ExpressionGraph
 
-# Build the project
 dotnet build
 
-# Run the application
 dotnet run
 ```
 
-Or just open the `.sln` file in Visual Studio and hit **F5**.
+Alternatively, open the solution file in Visual Studio and press **F5**.
 
 ---
 
 ## 🎮 How to Use
 
-1. **Enter an expression** in the input field  
-   Example: `(3 + 5) * 2 ^ 3`
+1. Enter a mathematical expression
 
-2. **Hit Calculate** — see the result and the graph appear instantly
+   Example:
 
-3. **Drag nodes** to rearrange the graph view for better visualization
+   ```text
+   (3 + 5) * 2 ^ 3
+   ```
 
-4. **Change priorities** — click the "Priority" button and drag operators to reorder them
+2. Click **Calculate**
 
-5. **Toggle background music** — yes, it plays *Aria Math*. Yes, it's optional.
+3. View the generated graph structure
+
+4. Modify operator priorities using the Priority Editor
+
+5. Recalculate and compare the results
+
+6. Enjoy optional background music while exploring expressions
 
 ---
 
 ## 📸 Screenshots
 
-> *Add screenshots here!*
-
 ### Main Calculator View
+
 ![Main View](screenshots/calculator-main.png)
 
 ### Graph Visualization
+
 ![Graph View](screenshots/graph-view.png)
 
 ### Priority Editor
+
 ![Priority Editor](screenshots/priority-editor.png)
 
 ---
 
 ## 🎵 Music Credit
 
-Background music: **Aria Math** by *C418*  
-From *Minecraft — Volume Beta*  
-Used for educational/non-commercial purposes.
+Background music: **Aria Math** by **C418**
+
+Included as part of the application's user experience and used for educational purposes.
 
 ---
 
 ## 📌 Future Improvements
 
-- [ ] Save graphs as images (PNG/SVG)
-- [ ] Export calculations as CSV
-- [ ] Support for functions (`sin`, `cos`, `log`, `sqrt`)
-- [ ] Light theme toggle
-- [ ] Unit testing for expression parser
-- [ ] Keyboard shortcuts for faster input
-- [ ] History of calculations
+* [ ] Save graphs as PNG/SVG
+* [ ] Export calculations as CSV
+* [ ] Support mathematical functions (`sin`, `cos`, `log`, `sqrt`)
+* [ ] Light theme support
+* [ ] Additional unit tests
+* [ ] Keyboard shortcuts
+* [ ] Calculation history
+* [ ] Expression import/export
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+Contributions, suggestions, and improvements are welcome.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
 5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-[MIT](LICENSE) © [Your Name]
+MIT License © Amirreza Khaleghverdi
 
 ---
 
-## 🙏 Acknowledgments
+## 🔗 Project Repository
 
-- C418 for the masterpiece *Aria Math*
-- My DSA professor for pushing us to think in graphs
-- The WPF community for endless Stack Overflow wisdom
-- Everyone who contributed to this project
+Repository:
 
----
-
-## 📬 Contact
-
-[Your Name] - [your.email@example.com](mailto:your.email@example.com)
-
-Project Link: [https://github.com/YOUR-USERNAME/YOUR-REPO-NAME](https://github.com/YOUR-USERNAME/YOUR-REPO-NAME)
+https://github.com/amirreza-khaleghverdi/ExpressionGraph
 
 ---
 
-**Made with ❤️, C#, and way too much coffee**
+**Made with ❤️, C#, WPF, and a passion for Data Structures & Algorithms**
