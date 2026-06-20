@@ -20,7 +20,7 @@
 * [Getting Started](#-getting-started)
 * [How to Use](#-how-to-use)
 * [Screenshots](#-screenshots)
-* [Music Credit](#-music-credit)
+* [Data Structures Concepts](#-data-structures-concepts)
 * [Future Improvements](#-future-improvements)
 * [Contributing](#-contributing)
 * [License](#-license)
@@ -174,6 +174,10 @@ Alternatively, open the solution file in Visual Studio and press **F5**.
 ### Priority Editor
 
 ![Priority Editor](screenshots/priority-editor.png)
+
+### Variable Editor
+
+![Variable Editor](screenshots/variable-editor.png)
 
 ---
 
